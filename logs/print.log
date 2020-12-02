@@ -1,0 +1,4 @@
+ds
+
+17:39:12.231 [main] INFO  DriverInit - Log4j 2 info logs+
+17:39:12.232 [main] ERROR DriverInit - Log4j 2 error logs+
