@@ -1,5 +1,4 @@
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 
 public class ForgotPassTest extends DriverInit{

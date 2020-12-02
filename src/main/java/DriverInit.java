@@ -3,6 +3,8 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,8 +14,10 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class DriverInit {
+
     public static AppiumDriver driver;
     public static Properties prop;
+    public static Logger log = LogManager.getLogger(DriverInit.class.getName());
 
     public static AppiumDriver initDriver() throws IOException {
         prop = new Properties();
@@ -31,11 +35,11 @@ public class DriverInit {
             capabilities.setCapability(MobileCapabilityType.APP, appSrc.getAbsolutePath());
 //            capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"com.bexio.bxBexio");
 //            capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.bexio.bxBexio.MainActivity");
-            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Samsung SM-G973F");
+            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("device"));
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         } else {
             DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone");
+            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("device"));
             driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         }
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
