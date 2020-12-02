@@ -5,7 +5,7 @@
         <classes>
             <class name="LoginTest">
                 <methods>
-                    <include name="loginTest"/>
+                    <exclude name="loginTest"/>
                 </methods>
             </class>
             <class name="LogInRejectRequestAccessTest">
@@ -13,6 +13,7 @@
                     <include name="logInRejectRequestAccess"/>
                 </methods>
             </class>
+            <class name="ForgotPassTest"></class>
         </classes>
     </test>
 </suite>

@@ -8,5 +8,6 @@ public class ForgotPassTest extends DriverInit{
         SelectorsGP forgotPass = new SelectorsGP(driver);
         forgotPass.getForgotPassLogInLink().click();
         forgotPass.getEnterEmailForgotPass().sendKeys(prop.getProperty("usernameForgot"));
+        log.info("Log4j 2 info logs+");
     }
 }
