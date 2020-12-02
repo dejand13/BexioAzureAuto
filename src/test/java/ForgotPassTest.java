@@ -9,5 +9,6 @@ public class ForgotPassTest extends DriverInit{
         forgotPass.getForgotPassLogInLink().click();
         forgotPass.getEnterEmailForgotPass().sendKeys(prop.getProperty("usernameForgot"));
         log.info("Log4j 2 info logs+");
+        log.error("Log4j 2 error logs+");
     }
 }
