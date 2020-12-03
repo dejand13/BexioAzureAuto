@@ -25,7 +25,9 @@ public class DriverInit {
         FileInputStream data = new FileInputStream(src);
         prop.load(data);
 
-        String executionStore = prop.getProperty("store");
+//        String executionStore = prop.getProperty("store");
+        String executionStore = System.getProperty("Store");
+
         if (executionStore.equalsIgnoreCase("android")) {
             File source = new File("src");
             File appSrc = new File(source,"app-development.apk");
