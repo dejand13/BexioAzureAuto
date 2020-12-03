@@ -38,7 +38,9 @@ public class DriverInit {
 //            capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"com.bexio.bxBexio");
 //            capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.bexio.bxBexio.MainActivity");
 //            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("Device"));
-            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, System.getProperty("Device"));
+            if(System.getProperty("Device").equalsIgnoreCase("HUAWEI SNE-LX1")) {
+                capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, System.getProperty("Device"));
+            }
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         } else {
             DesiredCapabilities capabilities = new DesiredCapabilities();
