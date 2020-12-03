@@ -10,7 +10,8 @@ public class LogInRejectRequestAccessTest extends DriverInit{
         SelectorsGP loginPage = new SelectorsGP(driver);
 //        loginPage.getUsername().sendKeys(prop.getProperty("username"));
         loginPage.getUsername().sendKeys(System.getProperty("username"));
-        loginPage.getPassword().sendKeys(prop.getProperty("pass"));
+//        loginPage.getPassword().sendKeys(prop.getProperty("pass"));
+        loginPage.getPassword().sendKeys(System.getProperty("pass"));
         loginPage.getLoginButton().click();
         Thread.sleep(4000L);
 //        Choosing the desired company from the multiple companies
