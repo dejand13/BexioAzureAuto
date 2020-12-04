@@ -15,7 +15,8 @@ public class LogInRejectRequestAccessTest extends DriverInit{
         loginPage.getLoginButton().click();
         Thread.sleep(4000L);
 //        Choosing the desired company from the multiple companies
-        String comName = prop.getProperty("companyName");
+//        String comName = prop.getProperty("companyName");
+        String comName = System.getProperty("companyName");
         for(int i = 0; i<loginPage.getLogInCompanyNamesList().size(); i++) {
             if(loginPage.getLogInCompanyNamesList().get(i).getText().equalsIgnoreCase(comName)){
                 loginPage.getLogInCompanyNamesList().get(i).click();
