@@ -8,10 +8,8 @@ public class LoginTest extends DriverInit {
         initDriver();
 //        Fulfilling the text boxes and logging in
         SelectorsGP loginPage = new SelectorsGP(driver);
-//        loginPage.getUsername().sendKeys(prop.getProperty("username"));
-        loginPage.getUsername().sendKeys(System.getProperty("username"));
-//        loginPage.getPassword().sendKeys(prop.getProperty("pass"));
-        loginPage.getPassword().sendKeys(System.getProperty("pass"));
+        loginPage.getUsername().sendKeys(prop.getProperty("username"));
+        loginPage.getPassword().sendKeys(prop.getProperty("pass"));
         loginPage.getLoginButton().click();
         Thread.sleep(4000L);
 //        Choosing the desired company from the multiple companies
