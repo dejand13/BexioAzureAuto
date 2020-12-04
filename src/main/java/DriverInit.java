@@ -3,8 +3,11 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 import java.io.FileInputStream;
@@ -47,5 +50,11 @@ public class DriverInit {
         }
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return driver;
+    }
+    public static void takeScreenshot(String getMethodName) throws IOException {
+        TakesScreenshot takeSS = (TakesScreenshot)driver;
+        File src = takeSS.getScreenshotAs(OutputType.FILE);
+        String screenShotPath = System.getProperty("user.dir")+"//failureSS//"+getMethodName+".png";
+        FileUtils.copyFile(src, new File(screenShotPath));
     }
 }
