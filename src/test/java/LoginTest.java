@@ -58,5 +58,6 @@ public class LoginTest extends DriverInit {
 //        Verifying that user is navigated on the chosen company home screen
             String homeScreenCompanyName = loginPage.homeScreenCompanyName.getText();
             Assert.assertEquals(homeScreenCompanyName, comName);
+            System.out.println("checks");
     }
 }
