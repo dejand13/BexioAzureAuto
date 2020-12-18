@@ -7,8 +7,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+
 public class LoginTest extends DriverInit {
     public static Logger log = LogManager.getLogger(LoginTest.class.getName());
+
     @Test
     public void loginTest() throws Exception {
         initDriver();

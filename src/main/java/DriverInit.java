@@ -13,6 +13,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.lang.annotation.Annotation;
 import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
