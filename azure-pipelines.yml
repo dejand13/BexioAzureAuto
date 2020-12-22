@@ -1,24 +1,33 @@
 trigger:
-- main
+- master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'macOS-10.15.5'
 
-steps:
-- task: Bash@3
+steps: 
+- task: CocoaPods@0
   inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      export Store = $(Store)
-      export Device = $(Device)
-      export udid = $(udid)
-      export username = $(username)
-      export pass = $(pass)
-      export teamId = $(teamId)
-      export OS = $(OS)
-      export bundleId = $(bundleId)
-      export appLocation = $(appLocation)
+    forceRepoUpdate: true
+
+- task: Xcode@5
+  inputs:
+    actions: 'build'
+    sdk: 'iphonesimulator'
+    configuration: 'Debug'
+    xcodeVersion: '10'
+
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+
+- bash: |
+    npm install -g appium
+    appium --pre-launch --app=/Users/dejanadmin/Downloads/Bexio.ipa --udid=00008020-0014285C0261002E --platform-name=iOS --platform-version=14.2 --dont-stop-app-on-reset --command-timeout=120 --log-timestamp --device-name=iPhone --automation-name XCUITest
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
