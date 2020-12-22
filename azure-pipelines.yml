@@ -16,14 +16,6 @@ steps:
     configuration: 'Debug'
     xcodeVersion: '10'
 
-- task: NodeTool@0
-  inputs:
-    versionSpec: '10.x'
-
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.x'
-
 - bash: |
     npm install -g appium
     appium --pre-launch --app=/Users/dejanadmin/Downloads/Bexio.ipa --udid=00008020-0014285C0261002E --platform-name=iOS --platform-version=14.2 --dont-stop-app-on-reset --command-timeout=120 --log-timestamp --device-name=iPhone --automation-name XCUITest
