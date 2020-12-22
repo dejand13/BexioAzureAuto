@@ -5,13 +5,6 @@ pool:
   vmImage: 'macOS-10.15'
 
 steps: 
-- task: Xcode@5
-  inputs:
-    actions: 'build'
-    sdk: 'iphonesimulator'
-    configuration: 'Debug'
-    xcodeVersion: '10'
-
 - bash: |
     npm install -g appium
     appium --pre-launch --app=/Users/dejanadmin/Downloads/Bexio.ipa --udid=00008020-0014285C0261002E --platform-name=iOS --platform-version=14.2 --dont-stop-app-on-reset --command-timeout=120 --log-timestamp --device-name=iPhone --automation-name XCUITest
