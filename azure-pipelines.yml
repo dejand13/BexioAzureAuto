@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'macOS-10.15.5'
+  vmImage: 'macOS-10.15'
 
 steps: 
 - task: CocoaPods@0
