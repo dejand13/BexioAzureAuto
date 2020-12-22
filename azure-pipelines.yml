@@ -5,10 +5,6 @@ pool:
   vmImage: 'macOS-10.15'
 
 steps: 
-- task: CocoaPods@0
-  inputs:
-    forceRepoUpdate: true
-
 - task: Xcode@5
   inputs:
     actions: 'build'
