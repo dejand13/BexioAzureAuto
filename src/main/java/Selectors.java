@@ -20,32 +20,14 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Login | bexio\"]/XCUIElementTypeTextField")
         public WebElement username;
 
-//    By username = By.xpath("//android.widget.EditText[@resource-id='j_username']");
-//    public WebElement getUsername(){
-//        return driver.findElement(username);
-//    }
     @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='j_password']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField")
         public WebElement password;
-
-//    By password = By.xpath("//android.widget.EditText[@resource-id='j_password']");
-//    public WebElement getPassword(){
-//        return driver.findElement(password);
-//    }
 
     @AndroidFindBy(className = "android.widget.Button")
     @iOSXCUITFindBy(accessibility = "Login")
         public WebElement logginButton;
 
-//    By loginButton = By.className("android.widget.Button");
-//    public WebElement getLoginButton() {
-//        return driver.findElement(loginButton);
-//    }
-//    @iOSXCUITFindBy(accessibility = "would like to connect to one of your companies.")
-//        public WebElement availabilityOfLogInCompanyNamesList;
-    // handle it like allowCameraPermissions
-    //By availabilityOfLogInCompanyNamesList = By.xpath("//XCUIElementTypeStaticText[@name='would like to connect to one of your companies.']");
-    //@AndroidFindBy(xpath = "//android.view.View[@text='bexioGo would like to connect to one of your companies.Please select one.']")
     @AndroidFindBy(xpath = "//android.view.View[@text='You can only select one company.']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='would like to connect to one of your companies.']")
         public WebElement availabilityOfLogInCompanyNamesList;
@@ -53,11 +35,6 @@ public class Selectors {
     @AndroidFindBy(xpath = "//android.widget.TextView")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeLink")
         public List <WebElement> logInCompanyNamesList;
-
-//    By logInCompanyNamesList = By.xpath("//android.widget.TextView");
-//    public List<WebElement> getLogInCompanyNamesList() {
-//        return driver.findElements(logInCompanyNamesList);
-//    }
 
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='View & edit your contacts']")
         public WebElement requestAccessTo;
@@ -70,27 +47,13 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText")
         public WebElement homeScreenCompanyName;
 
-//    By homeScreenCompanyName = By.xpath("//android.widget.TextView");
-//    public WebElement getHomeScreenCompanyName() {
-//        return driver.findElement(homeScreenCompanyName);
-//    }
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Scan Documents']")
     @iOSXCUITFindBy(accessibility = "Scan Documents \uF065\"")
         public WebElement scanDocument;
 
-//    By scanDocument = By.xpath("//android.widget.TextView[@text='Scan Documents']");
-//    public WebElement getScanDocument() {
-//        return driver.findElement(scanDocument);
-//    }
-
     @AndroidFindBy(xpath = "//android.widget.TextView")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@value='Forgot password?']")
         public WebElement forgotPassLogInLink;
-
-//    By forgotPassLogInLink = By.xpath("//android.widget.TextView");
-//    public WebElement getForgotPassLogInLink() {
-//        return driver.findElement(forgotPassLogInLink);
-//    }
 
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@value='Remember my choice']")
         public WebElement rememberMyChoiseCheckBox;

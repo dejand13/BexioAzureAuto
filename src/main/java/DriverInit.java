@@ -42,8 +42,8 @@ public class DriverInit {
             capabilities.setCapability(MobileCapabilityType.APP, appSrc.getAbsolutePath());
 //            capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"com.bexio.bxBexio");
 //            capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.bexio.bxBexio.MainActivity");
-//            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("Device"));
-            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, System.getProperty("Device"));
+            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("Device"));
+//            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, System.getProperty("Device"));
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         } else {
             DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -53,20 +53,19 @@ public class DriverInit {
 //            capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, AutomationName.IOS_XCUI_TEST);
 //            capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"14.2");
 //            capabilities.setCapability(MobileCapabilityType.UDID,"D80D1B2B-B319-4BEE-937E-13B2B25E25A2");
-//            capabilities.setCapability(MobileCapabilityType.APP,"/Users/dejanadmin/Library/Developer/Xcode/DerivedData/Bexio-beaxqfreoqdxkgcapciliahwotsz/Build/Products/Debug-iphonesimulator/Bexio.app");
+//            capabilities.setCapability(MobileCapabilityType.APP,prop.getProperty("appLocation"));
 //            capabilities.setCapability(MobileCapabilityType.NO_RESET,"true");
 
 
 //            Desired cap for real device
             capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "IOS");
-            capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,"14.2");
+            capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,prop.getProperty("OS"));
             capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("Device"));
-            capabilities.setCapability("udid","00008020-0014285C0261002E");
-//            capabilities.setCapability("udid","c067963d7b46116377cd47d42caa386319a30736");
-            capabilities.setCapability("updatedWDABundleId", "com.bexio.bxBexio");
-            capabilities.setCapability("xcodeOrgId", "773CKPZ8CB");
+            capabilities.setCapability("udid",prop.getProperty("udid"));
+            capabilities.setCapability("updatedWDABundleId", "bundleId");
+            capabilities.setCapability("xcodeOrgId", prop.getProperty("teamId"));
             capabilities.setCapability("xcodeSigningId","iPhone Developer");
-            capabilities.setCapability(MobileCapabilityType.APP,"/Users/dejanadmin/Library/Developer/Xcode/DerivedData/Bexio-dnhuxcznhirppkgoeabacqigdhpo/Build/Products/Release-iphoneos/Bexio.app");
+            capabilities.setCapability(MobileCapabilityType.APP,prop.getProperty("appLocation"));
             driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         }
         driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
