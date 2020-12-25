@@ -25,15 +25,17 @@ public class LoginTest extends DriverInit {
         } catch (Exception e) {
             log.info("Allow notification dialog is not displayed on GP at this point");
         }
-            loginPage.password.sendKeys(prop.getProperty("pass"));
-            loginPage.username.sendKeys(prop.getProperty("username"));
+//            loginPage.password.sendKeys(prop.getProperty("pass"));
+            loginPage.password.sendKeys(System.getProperty("pass"));
+//            loginPage.username.sendKeys(prop.getProperty("username"));
+            loginPage.username.sendKeys(System.getProperty("username"));
             loginPage.logginButton.click();
             log.info("Credentials has been added and login button is tapped");
 
             wait.until(ExpectedConditions.visibilityOf(loginPage.availabilityOfLogInCompanyNamesList));
 //        Choosing the desired company from the multiple companies
-            String comName = prop.getProperty("companyName");
-//        String comName = System.getProperty("companyName");
+//            String comName = prop.getProperty("companyName");
+        String comName = System.getProperty("companyName");
             Boolean companyFound = false;
                 for (int i = 0; i < loginPage.logInCompanyNamesList.size(); i++) {
                     if (loginPage.logInCompanyNamesList.get(i).getText().contains(comName)) {

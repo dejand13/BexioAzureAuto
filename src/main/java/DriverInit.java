@@ -30,8 +30,8 @@ public class DriverInit {
         FileInputStream data = new FileInputStream(src);
         prop.load(data);
 
-        String executionStore = prop.getProperty("Store");
-//        String executionStore = System.getProperty("Store");
+//        String executionStore = prop.getProperty("Store");
+        String executionStore = System.getProperty("Store");
 
         if (executionStore.equalsIgnoreCase("android")) {
             File source = new File("src");
@@ -42,8 +42,8 @@ public class DriverInit {
             capabilities.setCapability(MobileCapabilityType.APP, appSrc.getAbsolutePath());
 //            capabilities.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,"com.bexio.bxBexio");
 //            capabilities.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.bexio.bxBexio.MainActivity");
-            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("Device"));
-//            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, System.getProperty("Device"));
+//            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("Device"));
+            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, System.getProperty("Device"));
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         } else {
             DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -58,14 +58,14 @@ public class DriverInit {
 
 
 //            Desired cap for real device
-            capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "IOS");
-            capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,prop.getProperty("OS"));
-            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("Device"));
-            capabilities.setCapability("udid",prop.getProperty("udid"));
-            capabilities.setCapability("updatedWDABundleId", "bundleId");
-            capabilities.setCapability("xcodeOrgId", prop.getProperty("teamId"));
-            capabilities.setCapability("xcodeSigningId","iPhone Developer");
-            capabilities.setCapability(MobileCapabilityType.APP,prop.getProperty("appLocation"));
+//            capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "IOS");
+//            capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION,prop.getProperty("OS"));
+//            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("Device"));
+//            capabilities.setCapability("udid",prop.getProperty("udid"));
+//            capabilities.setCapability("updatedWDABundleId", "bundleId");
+//            capabilities.setCapability("xcodeOrgId", prop.getProperty("teamId"));
+//            capabilities.setCapability("xcodeSigningId","iPhone Developer");
+//            capabilities.setCapability(MobileCapabilityType.APP,prop.getProperty("appLocation"));
             driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         }
         driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
