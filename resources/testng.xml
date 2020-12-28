@@ -8,7 +8,7 @@
         <classes>
             <class name="LoginTest">
                 <methods>
-                    <exclude name="loginTest"/>
+                    <include name="loginTest"/>
                 </methods>
             </class>
             <!-- <class name="LogInRejectRequestAccessTest">
