@@ -12,6 +12,7 @@ steps:
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
 - task: CmdLine@2
