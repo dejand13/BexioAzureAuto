@@ -8,13 +8,8 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      export USERNAME=$USERNAME
-      export PASS=$PASS
-
-- bash: |
-    env:
-      USERNAME:$(USERNAME)
-      PASS:$(PASS)
+      export USERNAME="$(USERNAME)"
+      export PASS="$(PASS)"
 
 - task: Maven@3
   inputs:
