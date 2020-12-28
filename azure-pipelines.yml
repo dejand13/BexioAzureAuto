@@ -2,8 +2,16 @@ trigger:
 - master
 
 pool: Default
-
 steps: 
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      export -Dusername=$(username)
+      export -Dpass=$(pass)
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
