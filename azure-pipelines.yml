@@ -7,7 +7,7 @@ steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: 'clean test'
+    goals: '-DStore="$Store"'
     publishJUnitResults: true
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
@@ -15,7 +15,3 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-- task: Bash@3
-  inputs:
-    script: 
-      export Store=$(Store)
