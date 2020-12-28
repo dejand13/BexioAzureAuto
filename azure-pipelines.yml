@@ -4,6 +4,9 @@ trigger:
 pool: Default
 
 steps: 
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
 
 
 - bash: |
