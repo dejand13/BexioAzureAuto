@@ -7,10 +7,13 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      # Write your commands here
-      
       export USERNAME=$USERNAME
       export PASS=$PASS
+
+- bash: |
+    env:
+      USERNAME=$USERNAME
+      PASS=$PASS
 
 - task: Maven@3
   inputs:
