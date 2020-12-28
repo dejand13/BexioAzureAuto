@@ -15,8 +15,7 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-- task: CmdLine@2
+- task: Bash@3
   inputs:
     script: 
       export Store=$(Store)
-      export udid=$(udid)
