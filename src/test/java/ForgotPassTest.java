@@ -2,6 +2,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class ForgotPassTest extends DriverInit{
+    @Test
     public void forgotPass() throws IOException {
         initDriver();
         Selectors forgotPass = new Selectors(driver);
