@@ -3,7 +3,6 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class LogInRejectRequestAccessTest extends DriverInit{
-    @Test
     public void logInRejectRequestAccess() throws IOException, InterruptedException {
         initDriver();
 //        Fulfilling the text boxes and logging in
