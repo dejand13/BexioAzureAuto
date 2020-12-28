@@ -8,6 +8,16 @@
     <artifactId>BexioGo</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
+        <plugins>
+            <!-- This plugin is used to test errors and does not affect the compilation of the project -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+        </plugins>
         <resources>
             <resource>
                 <directory>resources</directory>
