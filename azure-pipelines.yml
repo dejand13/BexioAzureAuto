@@ -9,8 +9,8 @@ steps:
     script: |
       # Write your commands here
       
-      username=$(username)
-      pass=$(pass)
+      export username=$(username)
+      export pass=$(pass)
 
 - task: Maven@3
   inputs:
