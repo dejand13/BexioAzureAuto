@@ -8,9 +8,9 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      export STORE="$(STORE)"
-      export USERNAME="$(USERNAME)"
-      export PASS="$(PASS)"
+      export Store="$(STORE)"
+      export username="$(USERNAME)"
+      export pass="$(PASS)"
 
 - task: Maven@3
   inputs:
