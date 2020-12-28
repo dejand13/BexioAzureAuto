@@ -14,7 +14,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
-                    <testFailureIgnore>true</testFailureIgnore>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                        <testFailureIgnore>true</testFailureIgnore>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
         </plugins>
