@@ -7,7 +7,7 @@ steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: test -DStore="$Store"
+    goals: clean test Store=$(Store)
     publishJUnitResults: true
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
