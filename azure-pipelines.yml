@@ -1,8 +1,7 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'macOS-10.15'
+pool: Default
 
 steps: 
 - bash: |
