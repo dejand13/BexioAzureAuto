@@ -18,4 +18,5 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 
+      export Store=$(Store)
       export udid=$(udid)
