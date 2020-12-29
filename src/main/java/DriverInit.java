@@ -31,20 +31,11 @@ public class DriverInit {
 //        String executionStore = prop.getProperty("Store");
         String executionStore = System.getProperty("Store");
 
-
+        DesiredCapabilities capabilities = new DesiredCapabilities();
         if (executionStore.equalsIgnoreCase("android")) {
-            File source = new File("src");
-            File appSrc = new File(source,"app-release.apk");
-
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-
             capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
-            capabilities.setCapability(MobileCapabilityType.APP, appSrc.getAbsolutePath());
-//            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("Device"));
-            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, System.getProperty("Device"));
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         } else {
-            DesiredCapabilities capabilities = new DesiredCapabilities();
             driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         }
         driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
