@@ -28,8 +28,8 @@ public class DriverInit {
         FileInputStream data = new FileInputStream(src);
         prop.load(data);
 
-        String executionStore = prop.getProperty("Store");
-//        String executionStore = System.getProperty("Store");
+//        String executionStore = prop.getProperty("Store");
+        String executionStore = System.getProperty("Store");
 
         if (executionStore.equalsIgnoreCase("android")) {
             File source = new File("src");
@@ -38,8 +38,8 @@ public class DriverInit {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
             capabilities.setCapability(MobileCapabilityType.APP, appSrc.getAbsolutePath());
-            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("Device"));
-//            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, System.getProperty("Device"));
+//            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, prop.getProperty("Device"));
+            capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, System.getProperty("Device"));
             driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         } else {
             DesiredCapabilities capabilities = new DesiredCapabilities();
