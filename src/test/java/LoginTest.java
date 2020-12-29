@@ -25,10 +25,10 @@ public class LoginTest extends DriverInit {
         } catch (Exception e) {
             log.info("Allow notification dialog is not displayed on GP at this point");
         }
-//            loginPage.password.sendKeys(prop.getProperty("pass"));
-            loginPage.password.sendKeys(System.getProperty("pass"));
-//            loginPage.username.sendKeys(prop.getProperty("username"));
-            loginPage.username.sendKeys(System.getProperty("username"));
+            loginPage.password.sendKeys(prop.getProperty("pass"));
+//            loginPage.password.sendKeys(System.getProperty("pass"));
+            loginPage.username.sendKeys(prop.getProperty("username"));
+//            loginPage.username.sendKeys(System.getProperty("username"));
             loginPage.logginButton.click();
             log.info("Credentials has been added and login button is tapped");
 
