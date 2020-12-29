@@ -8,6 +8,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
+      export Store="$(STORE)"
       export username="$(USERNAME)"
       export pass="$(PASS)"
 
