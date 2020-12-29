@@ -8,14 +8,13 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      export Store="$(STORE)"
       export username="$(USERNAME)"
       export pass="$(PASS)"
 
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    goals: clean test
+    goals: clean test -DStore=$Store
     publishJUnitResults: true
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
