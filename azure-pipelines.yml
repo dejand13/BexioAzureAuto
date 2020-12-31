@@ -19,7 +19,7 @@ steps:
     script: |
       # Write your commands here
       env:
-      export STORE="${{parameters.STORE}}"
+      STORE="${{parameters.STORE}}"
       echo "${{parameters.STORE}}"
       echo "$(pass)"
 - task: Maven@3
