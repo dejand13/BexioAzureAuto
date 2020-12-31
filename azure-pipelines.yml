@@ -22,7 +22,6 @@ steps:
       STORE="${{parameters.STORE}}"
       echo "${{parameters.STORE}}"
       echo "$(pass)"
-      mvn test
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
