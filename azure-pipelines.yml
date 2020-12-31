@@ -5,7 +5,7 @@ parameters:
     default: iOS
     values:
       - iOS
-      - Android
+      - android
 
 trigger:
 - master
@@ -18,8 +18,8 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
+      export Store=$((parameters.Store))
       
-      export Store="$(Store)"
       export username="$(username)"
       export pass="$(pass)"
 
