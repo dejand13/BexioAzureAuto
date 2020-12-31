@@ -22,6 +22,7 @@ steps:
       export STORE="${{parameters.STORE}}"
       echo "${{parameters.STORE}}"
       echo "$(pass)"
+      echo (export STORE="${{parameters.STORE}}")
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
