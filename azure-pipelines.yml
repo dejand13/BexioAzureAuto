@@ -1,6 +1,6 @@
 parameters:
-  - name: Store
-    displayName: Choose Store
+  - name: STORE
+    displayName: STORE
     type: string
     default: iOS
     values:
@@ -18,7 +18,7 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
-      -DStore=${{parameters.Store}}
+      -DStore="$(parameters.STORE)"
 
 - task: Maven@3
   inputs:
