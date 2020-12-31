@@ -18,6 +18,7 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
+      env:
       export STORE="${{parameters.STORE}}"
       echo "${{parameters.STORE}}"
       echo "$(pass)"
