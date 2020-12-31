@@ -2,7 +2,7 @@ parameters:
   - name: STORE
     displayName: STORE
     type: string
-    default: iOS
+    default: android
     values:
       - iOS
       - android
