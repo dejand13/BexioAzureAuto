@@ -18,7 +18,7 @@ steps:
     targetType: 'inline'
     script: |
       # Write your commands here
-      export -DSTORE="$((parameters.STORE))"
+      export -DSTORE="${{parameters.STORE}}"
 
 - task: Maven@3
   inputs:
