@@ -31,6 +31,7 @@ public class DriverInit {
 //        String executionStore = prop.getProperty("Store");
 //        String executionStore = System.getProperty("Store");
         String executionStore = System.getenv("STORE");
+        log.info(executionStore);
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         if (executionStore.equalsIgnoreCase("android")) {
