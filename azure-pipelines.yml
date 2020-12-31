@@ -19,6 +19,7 @@ steps:
     script: |
       # Write your commands here
       export STORE="${{parameters.STORE}}"
+      echo STORE
 
 - task: Maven@3
   inputs:
