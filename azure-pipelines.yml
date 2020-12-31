@@ -19,10 +19,10 @@ steps:
     script: |
       # Write your commands here
       env:
-      export STORE="${{parameters.STORE}}"
+      STORE="${{parameters.STORE}}"
       echo "${{parameters.STORE}}"
       echo "$(pass)"
-      echo (export STORE="${{parameters.STORE}}")
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
