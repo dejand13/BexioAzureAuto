@@ -7,7 +7,7 @@ steps:
 - task: replacetokens@3
   inputs:
     rootDirectory: '/Users/dejanadmin/_work/1/s/src/main/java'
-    targetFiles: '/DriverInit.java'
+    targetFiles: '/Users/dejanadmin/_work/1/s/src/main/java/DriverInit.java'
     encoding: 'auto'
     writeBOM: false
     verbosity: 'detailed'
