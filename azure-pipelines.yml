@@ -10,7 +10,7 @@ steps:
     encoding: 'auto'
     writeBOM: true
     actionOnMissing: 'warn'
-    keepToken: true
+    keepToken: false
     tokenPrefix: '#{'
     tokenSuffix: '}#'
     verbosity: 'detailed'
