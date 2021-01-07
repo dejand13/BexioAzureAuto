@@ -1,12 +1,3 @@
-parameters:
-  - name: STORE
-    displayName: STORE
-    type: string
-    default: android
-    values:
-      - iOS
-      - android
-
 trigger:
 - master
 
