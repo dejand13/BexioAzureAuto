@@ -7,7 +7,6 @@ steps:
 - task: replacetokens@3
   displayName: Perform variable substitution in java file
   inputs:
-    rootDirectory: '/Users/dejanadmin/_work/1/s/src/main/java'
     targetFiles: '**\*.java'
     encoding: 'auto'
     writeBOM: false
