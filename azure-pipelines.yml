@@ -6,7 +6,7 @@ pool: Default
 steps: 
 - task: replacetokens@3
   inputs:
-    targetFiles: 'DriverInit.java'
+    targetFiles: '**/*.java'
     encoding: 'auto'
     writeBOM: true
     actionOnMissing: 'warn'
