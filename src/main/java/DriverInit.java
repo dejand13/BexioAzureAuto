@@ -31,8 +31,8 @@ public class DriverInit {
 //        String executionStore = prop.getProperty("Store");
 //        String executionStore = System.getProperty("STORE");
 //        String executionStore = System.getenv().get("#{STORE}#");
-        String executionStore = System.getenv("#{STORE}#");
-        System.out.println(System.getenv("#{STORE}#"));
+        String executionStore = System.getenv().get("#{STORE}#");
+        System.out.println(System.getenv().get("#{STORE}#"));
         log.info(executionStore);
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
