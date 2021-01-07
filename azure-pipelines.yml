@@ -5,6 +5,7 @@ pool: Default
 
 steps: 
 - task: replacetokens@3
+  displayName: Perform variable substitution in java file
   inputs:
     rootDirectory: '/Users/dejanadmin/_work/1/s/src/main/java'
     targetFiles: '/Users/dejanadmin/_work/1/s/src/main/java/DriverInit.java'
@@ -17,7 +18,6 @@ steps:
     tokenSuffix: '}#'
     useLegacyPattern: false
     enableTelemetry: true
-  displayName: Perform variable substitution in java file
 
 - task: Maven@3
   inputs:
