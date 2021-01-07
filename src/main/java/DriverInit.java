@@ -30,8 +30,6 @@ public class DriverInit {
 
 //        String executionStore = prop.getProperty("Store");
         String executionStore = ("#{store}#");
-        log.info(executionStore);
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
         if (executionStore.equalsIgnoreCase("android")) {
             capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");

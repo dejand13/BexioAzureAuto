@@ -11,12 +11,12 @@
                     <include name="loginTest"/>
                 </methods>
             </class>
-            <!-- <class name="LogInRejectRequestAccessTest">
+            <class name="LogInRejectRequestAccessTest">
                 <methods>
                     <include name="logInRejectRequestAccess"/>
                 </methods>
-            </class> -->
-            <!-- <class name="ForgotPassTest"></class> -->
+            </class>
+             <class name="ForgotPassTest"></class>
         </classes>
     </test>
 </suite>
