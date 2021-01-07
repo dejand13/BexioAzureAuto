@@ -13,11 +13,18 @@ trigger:
 pool: Default
 
 steps: 
-- task: FileTransform@1
+- task: replacetokens@3
   inputs:
-    folderPath: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    fileType: 'json'
-    targetFiles: '**\*.config'
+    targetFiles: 'DriverInit.java'
+    encoding: 'auto'
+    writeBOM: true
+    actionOnMissing: 'warn'
+    keepToken: false
+    tokenPrefix: '#{'
+    tokenSuffix: '}#'
+    useLegacyPattern: false
+    enableTelemetry: true
+  displayName: Perform variable substitution in java file
 
 - task: Maven@3
   inputs:
