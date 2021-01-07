@@ -8,7 +8,7 @@ steps:
   displayName: Perform variable substitution in java file
   inputs:
     rootDirectory: '/Users/dejanadmin/_work/1/s/src/main/java'
-    targetFiles: '**\*.properties'
+    targetFiles: '**\*.java'
     encoding: 'auto'
     writeBOM: false
     verbosity: 'detailed'
