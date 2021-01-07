@@ -13,14 +13,11 @@ trigger:
 pool: Default
 
 steps: 
-- task: Bash@3
+- task: FileTransform@1
   inputs:
-    targetType: 'inline'
-    script: |
-      # Write your commands here
-      export STORE="${{parameters.STORE}}"
-      echo "${{parameters.STORE}}"
-      echo "$(pass)"
+    folderPath: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    fileType: 'json'
+    targetFiles: '**\*.config'
 
 - task: Maven@3
   inputs:
