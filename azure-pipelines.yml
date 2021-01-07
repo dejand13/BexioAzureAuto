@@ -6,7 +6,7 @@ pool: Default
 steps: 
 - task: replacetokens@3
   inputs:
-    targetFiles: 'BexioGo/src/main/java/DriverInit.java'
+    targetFiles: '/Users/dejanadmin/_work/1/s/src/main/java/DriverInit.java'
     encoding: 'auto'
     writeBOM: true
     actionOnMissing: 'warn'
