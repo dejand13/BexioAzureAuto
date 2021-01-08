@@ -8,13 +8,15 @@ public class LogInRejectRequestAccessTest extends DriverInit{
         initDriver();
 //        Fulfilling the text boxes and logging in
         Selectors loginPage = new Selectors(driver);
-        loginPage.username.sendKeys(prop.getProperty("username"));
-        loginPage.password.sendKeys(prop.getProperty("pass"));
+//        loginPage.password.sendKeys(prop.getProperty("pass"));
+        loginPage.password.sendKeys("#{pass}#");
+//        loginPage.username.sendKeys(prop.getProperty("username"));
+        loginPage.username.sendKeys("#{username}#");
         loginPage.logginButton.click();
         Thread.sleep(4000L);
 //        Choosing the desired company from the multiple companies
-        String comName = prop.getProperty("companyName");
-//        String comName = System.getProperty("companyName");
+//        String comName = prop.getProperty("companyName");
+        String comName = ("#{companyName}#");
         for(int i = 0; i<loginPage.logInCompanyNamesList.size(); i++) {
             if(loginPage.logInCompanyNamesList.get(i).getText().equalsIgnoreCase(comName)){
                 loginPage.logInCompanyNamesList.get(i).click();

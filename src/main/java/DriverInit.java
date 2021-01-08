@@ -28,7 +28,7 @@ public class DriverInit {
         FileInputStream data = new FileInputStream(src);
         prop.load(data);
 
-//        String executionStore = prop.getProperty("Store");
+//        String executionStore = prop.getProperty("store");
         String executionStore = ("#{store}#");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         if (executionStore.equalsIgnoreCase("android")) {
@@ -37,7 +37,7 @@ public class DriverInit {
         } else {
             driver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
         }
-        driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         return driver;
     }
     public static void takeScreenshot(String getMethodName) throws IOException {
