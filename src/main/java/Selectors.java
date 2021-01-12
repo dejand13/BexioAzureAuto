@@ -55,6 +55,10 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@value='Forgot password?']")
         public WebElement forgotPassLogInLink;
 
+    @AndroidFindBy(xpath = "//android.widget.Button[@value='Neues Passwort anfordern']")
+    @iOSXCUITFindBy(accessibility = "\uE033 Neues Passwort anfordern")
+        public WebElement sendNewPassword;
+
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@value='Remember my choice']")
         public WebElement rememberMyChoiseCheckBox;
 
@@ -71,8 +75,19 @@ public class Selectors {
         return driver.findElement(permissionDialogMessageAfterDeny);
     }
 
-    By enterEmailForgotPass = By.xpath("//android.widget.EditText[@resource-id='recover_password_form_email']");
-    public WebElement getEnterEmailForgotPass() {
-        return driver.findElement(enterEmailForgotPass);
-    }
+    @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='recover_password_form_email']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField")
+        public WebElement enterEmailForgotPass;
+
+    @AndroidFindBy()
+    @iOSXCUITFindBy(accessibility = "This value is not a valid email address.")
+        public WebElement notValidEmailAssert;
+
+    @AndroidFindBy()
+    @iOSXCUITFindBy(accessibility = "A message containing a link has been sent to your email address.")
+        public WebElement linkSuccessfullySentAssert;
+
+    @AndroidFindBy()
+    @iOSXCUITFindBy(accessibility = "Back to login")
+        public WebElement backToLogInForgotPass;
 }

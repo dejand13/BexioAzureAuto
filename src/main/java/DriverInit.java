@@ -11,7 +11,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.lang.annotation.Annotation;
 import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -28,8 +27,8 @@ public class DriverInit {
         FileInputStream data = new FileInputStream(src);
         prop.load(data);
 
-//        String executionStore = prop.getProperty("store");
-        String executionStore = ("#{store}#");
+        String executionStore = prop.getProperty("store");
+//        String executionStore = ("#{store}#");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         if (executionStore.equalsIgnoreCase("android")) {
             capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
