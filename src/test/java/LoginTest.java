@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class LoginTest extends DriverInit {
     public static Logger log = LogManager.getLogger(LoginTest.class.getName());
 
-    @BeforeTest
+    @Test
     public void loginTest() throws Exception {
         initDriver();
         WebDriverWait wait = new WebDriverWait(driver,10);
@@ -22,7 +22,7 @@ public class LoginTest extends DriverInit {
             driver.switchTo().alert().accept();
             log.info("Allow notifications dialog has been accepted");
         } catch (Exception e) {
-            log.info("Allow notification dialog is not displayed on GP at this point");
+            log.info("Allow notification dialog is not displayed on android");
         }
             loginPage.password.sendKeys(prop.getProperty("pass"));
 //            loginPage.password.sendKeys("#{pass}#");
@@ -37,19 +37,20 @@ public class LoginTest extends DriverInit {
 //            String comName = ("#{companyName}#");
             Boolean companyFound = false;
                 for (int i = 0; i < loginPage.logInCompanyNamesList.size(); i++) {
-                    if (loginPage.logInCompanyNamesList.get(i).getText().contains(comName)) {
+                    while(loginPage.logInCompanyNamesList.get(i).getText().contains(comName)) {
                         loginPage.logInCompanyNamesList.get(i).click();
                         companyFound = true;
+                        break;
                     }
                 }
+
                 if(companyFound == false) {
                     log.error("It appears that the desired company does NOT exist in this account");
                     throw new Exception("It appears that the desired company does NOT exist in this account");
                 }
-
-            try {
-                loginPage.requestAccessTo.isDisplayed();
-                loginPage.rememberMyChoiseCheckBox.click();
+        try {
+                loginPage.allowAccessToCompany.isDisplayed();
+//                loginPage.rememberMyChoiseCheckBox.click();
                 loginPage.allowAccessToCompany.click();
             } catch (Exception e) {
                 log.info("User has already granted permissions in this company in some previous login");
