@@ -34,9 +34,10 @@ public class LogInRejectRequestAccessTest extends DriverInit{
 //            String comName = ("#{companyName}#");
         Boolean companyFound = false;
         for (int i = 0; i < loginPage.logInCompanyNamesList.size(); i++) {
-            if (loginPage.logInCompanyNamesList.get(i).getText().contains(comName)) {
+            while(loginPage.logInCompanyNamesList.get(i).getText().contains(comName)) {
                 loginPage.logInCompanyNamesList.get(i).click();
                 companyFound = true;
+                break;
             }
         }
         if(companyFound == false) {
