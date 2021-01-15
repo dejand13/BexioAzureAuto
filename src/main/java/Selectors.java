@@ -113,6 +113,18 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF067\"])[2]")
         public WebElement addContactButton;
 
+    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF002\"])[2]/XCUIElementTypeOther[2]/XCUIElementTypeTextField")
+//    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther")
+        public WebElement searchBar;
+
+
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF007 Automation, Auto emailAddress@gmail.com']")
+//    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF007 Automation, Auto emailAddress@gmail.com\"])[3]")
+        public WebElement searchAutomationContact;
+
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='emailAddress@gmail.com']")
+        public WebElement emailAddressAutomationContact;
+
 //    Add Contact
 
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@value='Last name']")
