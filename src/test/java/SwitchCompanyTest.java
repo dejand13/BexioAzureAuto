@@ -6,8 +6,8 @@ import org.openqa.selenium.Dimension;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class switchCompanyTest extends LoginTest {
-    public static Logger log = LogManager.getLogger(switchCompanyTest.class.getName());
+public class SwitchCompanyTest extends LoginTest {
+    public static Logger log = LogManager.getLogger(SwitchCompanyTest.class.getName());
     @Test
     public void switchCompany() throws Exception {
 

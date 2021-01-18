@@ -2,7 +2,6 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import java.util.List;
@@ -51,6 +50,7 @@ public class Selectors {
         public WebElement allowAccessToCompany;
 
     @AndroidFindBy(xpath = "//android.view.View[@text='View & edit your contacts']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='View & edit your contacts']")
         public WebElement viewEditContacts;
 
 //    Home screen selectors
@@ -59,7 +59,7 @@ public class Selectors {
         public WebElement homeScreenCompanyName;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@index='1']")
-
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText")
         public WebElement switchCompanyNames;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Manage Contacts']")
@@ -87,9 +87,11 @@ public class Selectors {
         public WebElement recommendBexio;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF053']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF053']")
         public WebElement switchCompanyLeftArrow;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF054']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF054']")
     public WebElement switchCompanyRightArrow;
 
 //    Forget password selectors
@@ -159,7 +161,6 @@ public class Selectors {
         public WebElement newCompany;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText)[1]")
-//    @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@value='Last name']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther/")
         public WebElement lastName;
 
@@ -167,7 +168,6 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@value='First name']")
         public WebElement firstName;
 
-//    @AndroidFindBy(xpath = "//android.view.ViewGroup/android.view.ViewGroup[@index='2']/android.view.ViewGroup[@index='1']/android.widget.TextView")
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@index='2']/android.view.ViewGroup/android.widget.TextView")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther)[1]")
         public WebElement formOfAddress;
@@ -177,7 +177,6 @@ public class Selectors {
         public WebElement formOfAddressMr;
 
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@index='3']/android.view.ViewGroup/android.widget.TextView")
-//    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Choose \uF0D7\"])[2]")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther[@name='Choose \uF0D7']")
         public WebElement title;
 
@@ -281,7 +280,6 @@ public class Selectors {
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='This email address is not valid.']")
     @iOSXCUITFindBy(accessibility = "This email address is not valid.")
-//    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='This email address is not valid.']")
         public WebElement emailAddressValidation;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067'")
@@ -295,12 +293,21 @@ public class Selectors {
 
 //    My bexio Accounts
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF067']")
         public WebElement myBexioAccAddCompany;
 
 
     //Scanner scene selectors
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Scan and send to inbox']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF574 Scan and send to inbox \uF054']")
+        public WebElement scanSendToInbox;
+
     @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_message")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@value='“bexioGo” Would Like to Access the Camera']")
-    public WebElement allowCameraPermissions;
+        public WebElement allowCameraPermissions;
 
+//    Track Time
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Stopwatch']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='Stopwatch, tab, 1 of 3']")
+        public WebElement stopwatch;
 }
