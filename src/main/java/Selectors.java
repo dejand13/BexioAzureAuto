@@ -8,34 +8,35 @@ import java.util.List;
 
 public class Selectors {
     public AppiumDriver driver;
+
     public Selectors(AppiumDriver driver) {
-        PageFactory.initElements(new AppiumFieldDecorator(driver),this);
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
-//    Login selectors
+    //    Login selectors
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeAlert")
-        public WebElement allowNotificationDialog;
+    public WebElement allowNotificationDialog;
 
-    @AndroidFindBy(xpath="//android.widget.EditText[@resource-id='j_username']")
+    @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='j_username']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Login | bexio\"]/XCUIElementTypeTextField")
-        public WebElement username;
+    public WebElement username;
 
     @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='j_password']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField")
-        public WebElement password;
+    public WebElement password;
 
     @AndroidFindBy(className = "android.widget.Button")
     @iOSXCUITFindBy(accessibility = "Login")
-        public WebElement logginButton;
+    public WebElement logginButton;
 
-//    Company choice screen selectors
+    //    Company choice screen selectors
     @AndroidFindBy(xpath = "//android.view.View[@text='You can only select one company.']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='would like to connect to one of your companies.']")
-        public WebElement availabilityOfLogInCompanyNamesList;
+    public WebElement availabilityOfLogInCompanyNamesList;
 
     @AndroidFindBy(xpath = "//android.widget.TextView")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeLink")
-        public List <WebElement> logInCompanyNamesList;
+    public List<WebElement> logInCompanyNamesList;
 
     @AndroidFindBy(xpath = "//android.view.View[@text='Remember my choice']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@value='Remember my choice']")
@@ -43,40 +44,40 @@ public class Selectors {
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Reject']")
     @iOSXCUITFindBy(accessibility = "Reject")
-        public WebElement rejectAccess;
+    public WebElement rejectAccess;
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Allow']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='Allow']")
-        public WebElement allowAccessToCompany;
+    public WebElement allowAccessToCompany;
 
     @AndroidFindBy(xpath = "//android.view.View[@text='View & edit your contacts']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='View & edit your contacts']")
-        public WebElement viewEditContacts;
+    public WebElement viewEditContacts;
 
-//    Home screen selectors
+    //    Home screen selectors
     @AndroidFindBy(xpath = "//android.widget.TextView")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText")
-        public WebElement homeScreenCompanyName;
+    public WebElement homeScreenCompanyName;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@index='1']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText")
-        public WebElement switchCompanyNames;
+    public WebElement switchCompanyNames;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Manage Contacts']")
     @iOSXCUITFindBy(accessibility = "Manage Contacts \uF0C0")
-        public WebElement manageContacts;
+    public WebElement manageContacts;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Scan Documents']")
     @iOSXCUITFindBy(accessibility = "Scan Documents \uF065")
-        public WebElement scanDocuments;
+    public WebElement scanDocuments;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Track Time']")
     @iOSXCUITFindBy(accessibility = "Track Time")
-        public WebElement trackTime;
+    public WebElement trackTime;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='My bexio Accounts']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@label='My bexio Accounts \uF013']")
-        public WebElement myBexioAccounts;
+    public WebElement myBexioAccounts;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Send feedback']")
     @iOSXCUITFindBy(accessibility = "\uF075 Send feedback")
@@ -84,230 +85,248 @@ public class Selectors {
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Recommend']")
     @iOSXCUITFindBy(accessibility = "\uF4C4 Recommend")
-        public WebElement recommendBexio;
+    public WebElement recommendBexio;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF053']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF053']")
-        public WebElement switchCompanyLeftArrow;
+    public WebElement switchCompanyLeftArrow;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF054']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF054']")
     public WebElement switchCompanyRightArrow;
 
-//    Forget password selectors
+    //    Forget password selectors
     @AndroidFindBy(xpath = "//android.widget.TextView")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@value='Forgot password?']")
     public WebElement forgotPassLogInLink;
 
     @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='recover_password_form_email']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField")
-        public WebElement enterEmailForgotPass;
+    public WebElement enterEmailForgotPass;
 
     @AndroidFindBy(xpath = "//android.view.View[@text='This value is not a valid email address.']")
     @iOSXCUITFindBy(accessibility = "This value is not a valid email address.")
-        public WebElement notValidEmailAssert;
+    public WebElement notValidEmailAssert;
 
     @AndroidFindBy(xpath = "//android.view.View[@text='A message containing a link has been sent to your email address.']")
     @iOSXCUITFindBy(accessibility = "A message containing a link has been sent to your email address.")
-        public WebElement linkSuccessfullySentAssert;
+    public WebElement linkSuccessfullySentAssert;
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='Back to login']")
     @iOSXCUITFindBy(accessibility = "Back to login")
-        public WebElement backToLogInForgotPass;
+    public WebElement backToLogInForgotPass;
 
     @AndroidFindBy(xpath = "//android.widget.Button")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton")
-        public WebElement requestNewPassButton;
+    public WebElement requestNewPassButton;
 
-//    Recommend bexio
+    //    Recommend bexio
     @AndroidFindBy(xpath = "//android.widget.EditText")
-        public WebElement recommendEmailAddress;
+    public WebElement recommendEmailAddress;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Send']")
-        public WebElement recommendSendButton;
+    public WebElement recommendSendButton;
 
-    @AndroidFindBy(xpath = "//android.view.ViewGroup/android.view.ViewGroup[@index='1']/android.widget.TextView")
-        public WebElement recommendCloseButton;
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Close']")
+    public WebElement recommendCloseButton;
 
-//    Manage Contacts
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF00D']")
+    public WebElement recommendXbutton;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Thank you!']")
+    public WebElement recommendThankYou;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='This is not a valid email address.']")
+    public WebElement invalidEmailToastMessage;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='An email to this address has already been sent.']")
+    public WebElement recommentAlreadySentToastMessage;
+
+    //    Manage Contacts
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF015']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF015\"])[2]")
-        public WebElement homeButton;
+    public WebElement homeButton;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF067\"])[2]")
-        public WebElement addContactButton;
+    public WebElement addContactButton;
 
     @AndroidFindBy(xpath = "//android.widget.EditText")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF002\"])[2]/XCUIElementTypeOther[2]/XCUIElementTypeTextField")
-        public WebElement searchBar;
+    public WebElement searchBar;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Automation, Auto']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF007 Automation, Auto emailAddress@gmail.com']")
-        public WebElement searchAutomationContact;
+    public WebElement searchAutomationContact;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='emailAddress@gmail.com']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='emailAddress@gmail.com']")
-        public WebElement emailAddressAutomationContact;
+    public WebElement emailAddressAutomationContact;
 
 //    Add Contact
 
     //For iOS we are not able to select the element(selectors from BG element are given)
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='New person']")
-        public WebElement newPerson;
+    public WebElement newPerson;
 
     //For iOS we are not able to select the element(selectors from BG element are given)
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='New company']")
-        public WebElement newCompany;
+    public WebElement newCompany;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText)[1]")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther/")
-        public WebElement lastName;
+    public WebElement lastName;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup/android.view.ViewGroup[@index='1']/android.widget.EditText)[1]")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@value='First name']")
-        public WebElement firstName;
+    public WebElement firstName;
 
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@index='2']/android.view.ViewGroup/android.widget.TextView")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther)[1]")
-        public WebElement formOfAddress;
+    public WebElement formOfAddress;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Mr.']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Mr.\"])[2]")
-        public WebElement formOfAddressMr;
+    public WebElement formOfAddressMr;
 
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@index='3']/android.view.ViewGroup/android.widget.TextView")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther[@name='Choose \uF0D7']")
-        public WebElement title;
+    public WebElement title;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Dr.']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Dr.\"])[2]")
-        public WebElement titleDr;
+    public WebElement titleDr;
 
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@index='4']/android.view.ViewGroup/android.widget.TextView")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther)[3]")
-        public WebElement languageOfCorrespondence;
+    public WebElement languageOfCorrespondence;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Italian']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Italian\"])[2]")
-        public WebElement languageOfCorrItalian;
+    public WebElement languageOfCorrItalian;
 
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@index='2']/android.view.ViewGroup/android.widget.EditText")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"E-Mail\"]/XCUIElementTypeOther/XCUIElementTypeTextField")
-        public WebElement email;
+    public WebElement email;
 
     //Same selector used as for email for GP
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@index='2']/android.view.ViewGroup/android.widget.EditText")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"E-Mail This email address is not valid.\"]/XCUIElementTypeOther/XCUIElementTypeTextField")
-        public WebElement invalidEmailTextBox;
+    public WebElement invalidEmailTextBox;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@index='2']/android.view.ViewGroup/android.widget.EditText)[2]")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"E-Mail 2\"]/XCUIElementTypeOther/XCUIElementTypeTextField")
-        public WebElement email2;
+    public WebElement email2;
 
     //Same selector used as for email2 for GP
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@index='2']/android.view.ViewGroup/android.widget.EditText)[2]")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"E-Mail 2 This email address is not valid.\"]/XCUIElementTypeOther/XCUIElementTypeTextField")
-        public WebElement invalidEmail2TextBox;
+    public WebElement invalidEmail2TextBox;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@index='2']/android.view.ViewGroup/android.widget.EditText)[3]")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Phone\"]/XCUIElementTypeOther/XCUIElementTypeTextField")
-        public WebElement phone;
+    public WebElement phone;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@index='2']/android.view.ViewGroup/android.widget.EditText)[4]")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Phone 2\"]/XCUIElementTypeOther/XCUIElementTypeTextField")
-        public WebElement phone2;
+    public WebElement phone2;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@index='2']/android.view.ViewGroup/android.widget.EditText)[5]")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Mobile\"]/XCUIElementTypeOther/XCUIElementTypeTextField")
-        public WebElement mobile;
+    public WebElement mobile;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@index='2']/android.view.ViewGroup/android.widget.EditText)[6]")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Website\"]/XCUIElementTypeOther/XCUIElementTypeTextField")
-        public WebElement website;
+    public WebElement website;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@index='4']/android.view.ViewGroup/android.widget.EditText)[1]")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Street\"]/XCUIElementTypeTextField")
-        public WebElement address;
+    public WebElement address;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@index='4']/android.view.ViewGroup/android.widget.EditText)[2]")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Postcode\"])[3]/XCUIElementTypeTextField")
-        public WebElement postcode;
+    public WebElement postcode;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@index='4']/android.view.ViewGroup/android.widget.EditText)[3]")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"City\"])[4]/XCUIElementTypeTextField")
-        public WebElement city;
+    public WebElement city;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@index='4']/android.view.ViewGroup[@index='3']/android.view.ViewGroup/android.widget.TextView)")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Switzerland \uF0D7\"])[2]")
-        public WebElement country;
+    public WebElement country;
 
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@index='7']/android.view.ViewGroup/android.widget.TextView[@text='Bulgaria']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Bulgaria\"])[2]")
-        public WebElement countryBulgaria;
+    public WebElement countryBulgaria;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Finland']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Finland\"])[2]")
-        public WebElement countryFinland;
+    public WebElement countryFinland;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@index='5']/android.view.ViewGroup/android.widget.EditText)[1]")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Remarks\"]/XCUIElementTypeOther/XCUIElementTypeTextView")
-        public WebElement remarks;
+    public WebElement remarks;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@index='5']/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView)")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Choose \uF0D7\"])[3]")
-        public WebElement category;
+    public WebElement category;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='QA!']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF0C8 QA!\"])[2]")
-        public WebElement categoryQA;
+    public WebElement categoryQA;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@index='5']/android.view.ViewGroup[@index='2']/android.view.ViewGroup/android.widget.TextView)")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Choose \uF0D7\"])[4]")
-        public WebElement sectors;
+    public WebElement sectors;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Sector 1B']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF0C8 Sector 1B\"])[2]")
-        public WebElement sector1B;
+    public WebElement sector1B;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Save']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Save\"]")
-        public WebElement checkboxSaveButton;
+    public WebElement checkboxSaveButton;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Please provide a name']")
     @iOSXCUITFindBy(accessibility = "Please provide a name")
-        public WebElement lastNameValidation;
+    public WebElement lastNameValidation;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='This email address is not valid.']")
     @iOSXCUITFindBy(accessibility = "This email address is not valid.")
-        public WebElement emailAddressValidation;
+    public WebElement emailAddressValidation;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067'")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF00C\"])[2]")
     public WebElement addContactSaveButton;
 
-//    Edit Contact
+    //    Edit Contact
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067'")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF304\"])[2]")
-        public WebElement editButton;
+    public WebElement editButton;
 
-//    My bexio Accounts
+    //    My bexio Accounts
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF067']")
-        public WebElement myBexioAccAddCompany;
+    public WebElement myBexioAccAddCompany;
 
 
-    //Scanner scene selectors
+    //    Scanner scene selectors
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Scan and send to inbox']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF574 Scan and send to inbox \uF054']")
-        public WebElement scanSendToInbox;
+    public WebElement scanSendToInbox;
 
     @AndroidFindBy(id = "com.android.permissioncontroller:id/permission_message")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@value='“bexioGo” Would Like to Access the Camera']")
-        public WebElement allowCameraPermissions;
+    public WebElement allowCameraPermissions;
 
-//    Track Time
+    //    Track Time
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Stopwatch']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='Stopwatch, tab, 1 of 3']")
-        public WebElement stopwatch;
+    public WebElement stopwatch;
+
+    //    Send Feedback
+    @AndroidFindBy(xpath = "//android.widget.ProgressBar")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='Your opinion is important to us!']")
+    public WebElement sendFeedbackWeb;
+
 }

@@ -15,7 +15,6 @@ public class LoginTest extends DriverInit {
     @BeforeTest
     public void loginTest() throws Exception {
         initDriver();
-        //WebDriverWait wait = new WebDriverWait(driver,10);
         loginCredentials(prop.getProperty("companyName"));
     }
     public void loginCredentials(String companyName) throws Exception {
