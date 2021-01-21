@@ -310,13 +310,13 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF067']")
     public WebElement myBexioAccAddCompany;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView")
-    public List<WebElement> myBexioAccountList;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Remove']")
+    @iOSXCUITFindBy(accessibility = "Remove")
     public WebElement myBexioRemove;
 
     @AndroidFindBy(xpath = "//android.widget.Button[@text='REMOVE']")
+    @iOSXCUITFindBy(accessibility = "Remove")
     public WebElement removeButtonDialog;
 
     //    Scanner scene selectors

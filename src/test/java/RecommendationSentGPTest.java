@@ -13,12 +13,13 @@ public class RecommendationSentGPTest extends LoginTest{
     @Test
     public void recommendationSent() throws InterruptedException {
         String randomString = RandomStringUtils.randomAlphabetic(8);
+        String randomDomain = RandomStringUtils.randomAlphabetic(8);
         WebDriverWait wait = new WebDriverWait(driver,10);
 
         Selectors recommend = new Selectors(driver);
         recommend.recommendBexio.click();
         log.info("Tapping on Recommend Bexio button");
-        recommend.recommendEmailAddress.sendKeys(randomString + "@gmail.com");
+        recommend.recommendEmailAddress.sendKeys(randomString + "@" +randomDomain+ ".com");
         log.info("Entering valid email address");
         recommend.recommendSendButton.click();
         wait.until(ExpectedConditions.visibilityOf(recommend.recommendThankYou));
@@ -28,10 +29,6 @@ public class RecommendationSentGPTest extends LoginTest{
 //        Closing the recommend bexio popup using close button
         recommend.recommendCloseButton.click();
         log.info("Tapping on close button");
-
-//        recommend.myBexioAccounts.click();
-//        Assert.assertTrue(recommend.myBexioAccAddCompany.isDisplayed());
-//        log.info("Verifying that recommend bexio dialog has been closed by navigating in my bexio accounts scene");
 
     }
 

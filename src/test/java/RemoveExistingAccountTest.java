@@ -1,6 +1,5 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -32,7 +31,6 @@ public class RemoveExistingAccountTest extends LoginTest{
         Assert.assertTrue(removeAccount.logginButton.isDisplayed());
         log.info("Verifying that login form has been displayed");
 
-
-
+        loginCredentials(prop.getProperty("secondCompanyName"));
     }
 }
