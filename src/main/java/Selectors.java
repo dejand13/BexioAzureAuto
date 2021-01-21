@@ -330,8 +330,61 @@ public class Selectors {
 
     //    Track Time
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Stopwatch']")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='Stopwatch, tab, 1 of 3']")
+    @iOSXCUITFindBy(accessibility = "Stopwatch, tab, 1 of 3")
     public WebElement stopwatch;
+
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@value='Add description']")
+    public WebElement addDescriptionTrackTime;
+
+    @iOSXCUITFindBy(accessibility ="More \uF0D7")
+    public WebElement moreTrackTime;
+
+    @iOSXCUITFindBy(accessibility = "Less \uF0D8")
+    public WebElement lessTrackTime;
+
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='Entry can be invoiced']/XCUIElementTypeOther")
+    public WebElement toggleButtonTrueTrackTime;
+
+//    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name='Contact Choose \uF0D7']/XCUIElementTypeOther)")
+    @iOSXCUITFindBy(accessibility = "Contact Choose \uF0D7")
+    public WebElement contactTrackTime;
+
+//    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name='Activity * Administration \uF0D7']/XCUIElementTypeOther)")
+    @iOSXCUITFindBy(accessibility = "Activity * Administration \uF0D7")
+    public WebElement activityTrackTime;
+
+//    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name='Project Choose \uF0D7']]/XCUIElementTypeOther)")
+    @iOSXCUITFindBy(accessibility = "Project Choose \uF0D7")
+    public WebElement projectTrackTime;
+
+//    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name='Work package Choose \uF0D7']/XCUIElementTypeOther)")
+    @iOSXCUITFindBy(accessibility = "Work package Choose \uF0D7")
+    public WebElement workPackageTrackTime;
+
+    @iOSXCUITFindBy(accessibility = "Log time, tab, 2 of 3")
+    public WebElement logTime;
+
+    @iOSXCUITFindBy(accessibility = "Duration")
+    public WebElement durationLogTime;
+
+    @iOSXCUITFindBy(accessibility = "From-To")
+    public WebElement FromToLogTime;
+
+    @iOSXCUITFindBy(accessibility = "Save")
+    public WebElement saveButtonTrackTime;
+
+    @iOSXCUITFindBy(accessibility = "Clear")
+    public WebElement clearButtonTrackTime;
+
+    @iOSXCUITFindBy(accessibility = "Cancel")
+    public WebElement cancelWheelPicker;
+
+    @iOSXCUITFindBy(accessibility = "Remove")
+    public WebElement removeOverviewTrackTime;
+
+
+    @iOSXCUITFindBy(accessibility = "Overview, tab, 3 of 3")
+    public WebElement overview;
 
     //    Send Feedback
     @AndroidFindBy(xpath = "//android.widget.ProgressBar")
