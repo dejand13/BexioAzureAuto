@@ -17,6 +17,7 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeAlert")
     public WebElement allowNotificationDialog;
 
+
     @AndroidFindBy(xpath = "//android.widget.EditText[@resource-id='j_username']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Login | bexio\"]/XCUIElementTypeTextField")
     public WebElement username;
@@ -309,6 +310,14 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF067']")
     public WebElement myBexioAccAddCompany;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView")
+    public List<WebElement> myBexioAccountList;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Remove']")
+    public WebElement myBexioRemove;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='REMOVE']")
+    public WebElement removeButtonDialog;
 
     //    Scanner scene selectors
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Scan and send to inbox']")

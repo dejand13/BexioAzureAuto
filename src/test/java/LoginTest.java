@@ -6,6 +6,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -73,5 +74,16 @@ public class LoginTest extends DriverInit {
 //        Verifying that user is navigated on the chosen company home screen
         String homeScreenCompanyName = loginPage.homeScreenCompanyName.getText();
 //            Assert.assertEquals(homeScreenCompanyName, comName);
+    }
+
+    @AfterTest
+    public void afterTestMethod() throws Exception {
+        Selectors afterTest = new Selectors(driver);
+        afterTest.myBexioAccounts.click();
+        log.info("After test - Navigating into my bexio account");
+        afterTest.myBexioAccAddCompany.click();
+        log.info("Tapping on add new company button");
+        Assert.assertTrue(afterTest.logginButton.isDisplayed());
+        log.info("Verifying that login form has been displayed");
     }
 }

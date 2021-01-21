@@ -4,6 +4,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class RecommendationSentGPTest extends LoginTest{
@@ -28,8 +29,10 @@ public class RecommendationSentGPTest extends LoginTest{
         recommend.recommendCloseButton.click();
         log.info("Tapping on close button");
 
-        recommend.myBexioAccounts.click();
-        Assert.assertTrue(recommend.myBexioAccAddCompany.isDisplayed());
-        log.info("Verifying that recommend bexio dialog has been closed by navigating in my bexio accounts scene");
+//        recommend.myBexioAccounts.click();
+//        Assert.assertTrue(recommend.myBexioAccAddCompany.isDisplayed());
+//        log.info("Verifying that recommend bexio dialog has been closed by navigating in my bexio accounts scene");
+
     }
+
 }

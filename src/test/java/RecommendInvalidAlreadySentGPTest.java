@@ -41,5 +41,6 @@ public class RecommendInvalidAlreadySentGPTest extends LoginTest{
         recommend.myBexioAccounts.click();
         Assert.assertTrue(recommend.myBexioAccAddCompany.isDisplayed());
         log.info("Verifying that recommend bexio dialog has been closed by navigating in my bexio accounts scene");
+
     }
 }

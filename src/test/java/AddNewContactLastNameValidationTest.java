@@ -29,7 +29,12 @@ public class AddNewContactLastNameValidationTest extends LoginTest{
         int y = (int) (heightOfScreen * 0.45);
 
         TouchAction touch = new TouchAction(driver);
-        touch.tap(PointOption.point(x,y)).perform();
+        String executionStore = prop.getProperty("store");
+        if(executionStore.equalsIgnoreCase("android")) {
+            validation.newPerson.click();
+        } else{
+            touch.tap(PointOption.point(x,y)).perform();
+        }
         log.info("Tapping on \"New person\" button");
 
         validation.firstName.sendKeys("DDD");
