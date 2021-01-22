@@ -88,5 +88,7 @@ public class LoginTest extends DriverInit {
         log.info("Tapping on add new company button");
         Assert.assertTrue(afterTest.logginButton.isDisplayed());
         log.info("Verifying that login form has been displayed");
+        driver.closeApp();
+        log.info("Closing the app");
     }
 }
