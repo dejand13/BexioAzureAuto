@@ -49,7 +49,7 @@
             <class name="com.bexio.manageContacts.AddNewContactEmailValidationTest"/>
         </classes>
     </test>
-    <test name="Email Validation">
+    <test name="Last Name Validation">
         <classes>
             <class name="com.bexio.manageContacts.AddNewContactLastNameValidationTest"/>
         </classes>
