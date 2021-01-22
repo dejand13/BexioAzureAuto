@@ -6,7 +6,6 @@
     </listeners>
     <test verbose="2" preserve-order="true" name="C:/Users/ddoneski/IdeaProjects/BexioGo/src">
         <classes>
-            <class name="com.bexio.logInHomeScreen.LoginTest"/>
             <class name="com.bexio.logInHomeScreen.ForgotPassTest"/>
             <class name="com.bexio.logInHomeScreen.LogInRejectRequestAccessTest"/>
             <class name="com.bexio.logInHomeScreen.RecommendationSentGPTest"/>
