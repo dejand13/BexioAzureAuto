@@ -29,8 +29,8 @@ public class DriverInit {
         FileInputStream data = new FileInputStream(src);
         prop.load(data);
 
-        String executionStore = prop.getProperty("store");
-//        String executionStore = ("#{store}#");
+//        String executionStore = prop.getProperty("store");
+        String executionStore = ("#{store}#");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         if (executionStore.equalsIgnoreCase("android")) {
             capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
