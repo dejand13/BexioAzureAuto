@@ -44,4 +44,14 @@
             <class name="com.bexio.logInHomeScreen.RemoveExistingAccountTest"/>
         </classes>
     </test>
+    <test name="Email Validation">
+        <classes>
+            <class name="com.bexio.manageContacts.AddNewContactEmailValidationTest"/>
+        </classes>
+    </test>
+    <test name="Email Validation">
+        <classes>
+            <class name="com.bexio.manageContacts.AddNewContactLastNameValidationTest"/>
+        </classes>
+    </test>
 </suite>

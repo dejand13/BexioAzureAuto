@@ -29,11 +29,11 @@ public class RemoveExistingAccountTest extends LoginTest {
         Thread.sleep(5000L);
         removeAccount.myBexioRemove.click();
         removeAccount.removeButtonDialog.click();
-//        removeAccount.homeButton.click();
 
         Assert.assertTrue(removeAccount.logginButton.isDisplayed());
         log.info("Verifying that login form has been displayed");
 
-        loginCredentials(prop.getProperty("secondCompanyName"));
+//        loginCredentials(prop.getProperty("secondCompanyName"));
+        loginCredentials("#{secondCompanyName}#");
     }
 }
