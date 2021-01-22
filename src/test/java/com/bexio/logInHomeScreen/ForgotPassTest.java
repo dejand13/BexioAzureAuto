@@ -1,10 +1,14 @@
+package com.bexio.logInHomeScreen;
+
+import com.bexio.init.DriverInit;
+import com.bexio.init.Selectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.io.IOException;
 
-public class ForgotPassTest extends DriverInit{
+public class ForgotPassTest extends DriverInit {
     public static Logger log = LogManager.getLogger(ForgotPassTest.class.getName());
     @Test
     public void forgotPass() throws IOException, InterruptedException {
@@ -20,8 +24,8 @@ public class ForgotPassTest extends DriverInit{
 
         forgotPass.forgotPassLogInLink.click();
         Thread.sleep(3000L);
-        forgotPass.enterEmailForgotPass.sendKeys(prop.getProperty("invalidEmail"));
-        //forgotPass.getEnterEmailForgotPass().sendKeys("#{invalidEmail}#");
+//        forgotPass.enterEmailForgotPass.sendKeys(prop.getProperty("invalidEmail"));
+        forgotPass.enterEmailForgotPass.sendKeys("#{invalidEmail}#");
         try {
             forgotPass.requestNewPassButton.isDisplayed();
             forgotPass.requestNewPassButton.click();
@@ -32,10 +36,10 @@ public class ForgotPassTest extends DriverInit{
         Assert.assertTrue(forgotPass.notValidEmailAssert.isDisplayed());
         log.info("Invalid email address has been added.");
         forgotPass.enterEmailForgotPass.clear();
-        forgotPass.enterEmailForgotPass.sendKeys(prop.getProperty("usernameForgot"));
-        //forgotPass.getEnterEmailForgotPass().sendKeys("#{usernameForgot}#");
+//        forgotPass.enterEmailForgotPass.sendKeys(prop.getProperty("usernameForgot"));
+        forgotPass.enterEmailForgotPass.sendKeys("#{usernameForgot}#");
         forgotPass.requestNewPassButton.click();
-        //forgotPass.sendNewPassword.click();
+
         Assert.assertTrue(forgotPass.linkSuccessfullySentAssert.isDisplayed());
         log.info("Link for password renewal has been sent successfully to the added email address.");
         forgotPass.backToLogInForgotPass.click();

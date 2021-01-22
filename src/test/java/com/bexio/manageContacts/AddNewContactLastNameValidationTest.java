@@ -1,3 +1,7 @@
+package com.bexio.manageContacts;
+
+import com.bexio.init.Selectors;
+import com.bexio.logInHomeScreen.LoginTest;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 import org.apache.logging.log4j.LogManager;
@@ -7,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AddNewContactLastNameValidationTest extends LoginTest{
+public class AddNewContactLastNameValidationTest extends LoginTest {
     public static Logger log = LogManager.getLogger(AddNewContactLastNameValidationTest.class.getName());
 
     @Test
@@ -29,7 +33,8 @@ public class AddNewContactLastNameValidationTest extends LoginTest{
         int y = (int) (heightOfScreen * 0.45);
 
         TouchAction touch = new TouchAction(driver);
-        String executionStore = prop.getProperty("store");
+//        String executionStore = prop.getProperty("store");
+        String executionStore = ("#{store}#");
         if(executionStore.equalsIgnoreCase("android")) {
             validation.newPerson.click();
         } else{
@@ -51,5 +56,9 @@ public class AddNewContactLastNameValidationTest extends LoginTest{
         wait.until(ExpectedConditions.visibilityOf(validation.editButton));
         Assert.assertTrue(validation.editButton.isDisplayed());
         log.info("Verifing that contact has been added and user is redirected in detailed view screen");
+
+        driver.navigate().back();
+        validation.homeButton.click();
+        log.info("Navigating on home page");
     }
 }

@@ -1,14 +1,16 @@
+package com.bexio.manageContacts;
+
+import com.bexio.init.Selectors;
+import com.bexio.logInHomeScreen.LoginTest;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.TapOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import java.io.IOException;
-import java.time.Duration;
+
 import static io.appium.java_client.touch.offset.ElementOption.element;
 
 public class ManageContactsAddContactTest extends LoginTest {

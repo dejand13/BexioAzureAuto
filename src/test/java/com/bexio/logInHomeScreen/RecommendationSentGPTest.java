@@ -1,13 +1,15 @@
+package com.bexio.logInHomeScreen;
+
+import com.bexio.init.Selectors;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
-public class RecommendationSentGPTest extends LoginTest{
+public class RecommendationSentGPTest extends LoginTest {
     public static Logger log = LogManager.getLogger(RecommendationSentGPTest.class.getName());
 
     @Test

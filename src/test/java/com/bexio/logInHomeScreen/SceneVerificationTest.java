@@ -1,12 +1,15 @@
+package com.bexio.logInHomeScreen;
+
+import com.bexio.init.Selectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SceneVerificationTest extends LoginTest{
+public class SceneVerificationTest extends LoginTest {
     public static Logger log = LogManager.getLogger(SceneVerificationTest.class.getName());
     @Test
-    public void sceneVerification() throws Exception {
+    public void sceneVerification() throws InterruptedException {
         Selectors sceneVerification = new Selectors(driver);
         Assert.assertTrue(sceneVerification.manageContacts.isDisplayed());
         log.info("Verifying that Manage Contacts scene is displayed");
@@ -16,6 +19,7 @@ public class SceneVerificationTest extends LoginTest{
         sceneVerification.homeButton.click();
         log.info("Tapping on home button");
 
+        Thread.sleep(2000L);
         Assert.assertTrue(sceneVerification.scanDocuments.isDisplayed());
         log.info("Verifying that Scan Documents scene is displayed");
         sceneVerification.scanDocuments.click();
@@ -24,6 +28,7 @@ public class SceneVerificationTest extends LoginTest{
         sceneVerification.homeButton.click();
         log.info("Tapping on home button");
 
+        Thread.sleep(2000L);
         Assert.assertTrue(sceneVerification.trackTime.isDisplayed());
         log.info("Verifying that Track Time scene is displayed");
         sceneVerification.trackTime.click();

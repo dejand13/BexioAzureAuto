@@ -1,3 +1,6 @@
+package com.bexio.logInHomeScreen;
+
+import com.bexio.init.Selectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -5,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RecommendInvalidAlreadySentGPTest extends LoginTest{
+public class RecommendInvalidAlreadySentGPTest extends LoginTest {
     public static Logger log = LogManager.getLogger(RecommendInvalidAlreadySentGPTest.class.getName());
 
     @Test

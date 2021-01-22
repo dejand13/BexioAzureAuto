@@ -1,9 +1,12 @@
+package com.bexio.logInHomeScreen;
+
+import com.bexio.init.Selectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RemoveExistingAccountTest extends LoginTest{
+public class RemoveExistingAccountTest extends LoginTest {
     public static Logger log = LogManager.getLogger(RemoveExistingAccountTest.class.getName());
 
     @Test

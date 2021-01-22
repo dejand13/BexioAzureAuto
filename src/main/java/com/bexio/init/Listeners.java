@@ -1,10 +1,8 @@
-import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.WebDriver;
+package com.bexio.init;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
-import java.io.IOException;
 
 public class Listeners extends DriverInit implements ITestListener {
     @Override

@@ -1,3 +1,5 @@
+package com.bexio.init;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -296,12 +298,12 @@ public class Selectors {
     @iOSXCUITFindBy(accessibility = "This email address is not valid.")
     public WebElement emailAddressValidation;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067'")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF00C\"])[2]")
     public WebElement addContactSaveButton;
 
     //    Edit Contact
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067'")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF304\"])[2]")
     public WebElement editButton;
 

@@ -1,3 +1,7 @@
+package com.bexio.logInHomeScreen;
+
+import com.bexio.init.DriverInit;
+import com.bexio.init.Selectors;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 import org.apache.logging.log4j.LogManager;
@@ -8,7 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
 
 public class LoginTest extends DriverInit {
     public static Logger log = LogManager.getLogger(LoginTest.class.getName());
@@ -16,7 +19,8 @@ public class LoginTest extends DriverInit {
     @BeforeTest
     public void loginTest() throws Exception {
         initDriver();
-        loginCredentials(prop.getProperty("companyName"));
+//        loginCredentials(prop.getProperty("companyName"));
+        loginCredentials("#{companyName}#");
     }
     public void loginCredentials(String companyName) throws Exception {
         WebDriverWait wait = new WebDriverWait(driver,10);
@@ -29,17 +33,17 @@ public class LoginTest extends DriverInit {
         } catch (Exception e) {
             log.info("Allow notification dialog is not displayed");
         }
-        loginPage.password.sendKeys(prop.getProperty("pass"));
-//            loginPage.password.sendKeys("#{pass}#");
-        loginPage.username.sendKeys(prop.getProperty("username"));
-//            loginPage.username.sendKeys("#{username}#");
+//        loginPage.password.sendKeys(prop.getProperty("pass"));
+            loginPage.password.sendKeys("#{pass}#");
+//        loginPage.username.sendKeys(prop.getProperty("username"));
+            loginPage.username.sendKeys("#{username}#");
         loginPage.logginButton.click();
         log.info("Credentials has been added and login button is tapped");
 
         wait.until(ExpectedConditions.visibilityOf(loginPage.availabilityOfLogInCompanyNamesList));
 //        Choosing the desired company from the multiple companies
-        String comName = companyName;
-//            String comName = ("#{companyName}#");
+//        String comName = companyName;
+            String comName = ("#{companyName}#");
         Boolean companyFound = false;
         for (int i = 0; i < loginPage.logInCompanyNamesList.size(); i++) {
             if(loginPage.logInCompanyNamesList.get(i).getText().contains(comName)) {

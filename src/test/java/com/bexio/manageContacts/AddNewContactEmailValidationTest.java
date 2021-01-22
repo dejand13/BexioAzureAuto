@@ -1,3 +1,7 @@
+package com.bexio.manageContacts;
+
+import com.bexio.init.Selectors;
+import com.bexio.logInHomeScreen.LoginTest;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 import org.apache.logging.log4j.LogManager;
@@ -7,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AddNewContactEmailValidationTest extends LoginTest{
+public class AddNewContactEmailValidationTest extends LoginTest {
     public static Logger log = LogManager.getLogger(AddNewContactEmailValidationTest.class.getName());
 
     @Test
@@ -26,13 +30,20 @@ public class AddNewContactEmailValidationTest extends LoginTest{
         int y = (int) (heightOfScreen * 0.45);
 
         TouchAction touch = new TouchAction(driver);
-        touch.tap(PointOption.point(x,y)).perform();
+//        String executionStore = prop.getProperty("store");
+        String executionStore = ("#{store}#");
+        if(executionStore.equalsIgnoreCase("android")) {
+            validation.newPerson.click();
+        } else{
+            touch.tap(PointOption.point(x,y)).perform();
+        }
         log.info("Tapping on \"New person\" button");
 
         validation.lastName.sendKeys("DDD");
         log.info("Adding last name");
         validation.email.sendKeys("Don");
         log.info("Adding invalid email address");
+
         validation.addContactSaveButton.click();
         log.info("Tapping on save button");
 
@@ -59,5 +70,9 @@ public class AddNewContactEmailValidationTest extends LoginTest{
         wait.until(ExpectedConditions.visibilityOf(validation.editButton));
         Assert.assertTrue(validation.editButton.isDisplayed());
         log.info("Verifying that contact has been added and user is redirected in detailed view screen");
+
+        driver.navigate().back();
+        validation.homeButton.click();
+        log.info("Navigating on home page");
     }
 }

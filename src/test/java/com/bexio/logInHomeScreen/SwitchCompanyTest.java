@@ -1,3 +1,6 @@
+package com.bexio.logInHomeScreen;
+
+import com.bexio.init.Selectors;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 import org.apache.logging.log4j.LogManager;
