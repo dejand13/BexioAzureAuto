@@ -177,7 +177,7 @@ public class Selectors {
     public WebElement newCompany;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText)[1]")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther/")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@value='Last name']")
     public WebElement lastName;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup/android.view.ViewGroup[@index='1']/android.widget.EditText)[1]")
