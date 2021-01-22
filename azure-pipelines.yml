@@ -2,8 +2,10 @@ trigger:
 - master
 
 pool: Default
+name: $(TeamProject)_$(Build.DefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 
 steps: 
+- script: echo '$(Build.BuildNumber)'
 - task: replacetokens@3
   displayName: Perform variable substitution in java file
   inputs:
