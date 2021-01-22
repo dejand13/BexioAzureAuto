@@ -302,6 +302,10 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF00C\"])[2]")
     public WebElement addContactSaveButton;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF015']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF053']")
+    public WebElement backButtonContactDetailView;
+
     //    Edit Contact
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF304\"])[2]")

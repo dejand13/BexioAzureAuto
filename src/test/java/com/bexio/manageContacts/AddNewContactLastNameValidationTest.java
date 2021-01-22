@@ -57,7 +57,7 @@ public class AddNewContactLastNameValidationTest extends LoginTest {
         Assert.assertTrue(validation.editButton.isDisplayed());
         log.info("Verifing that contact has been added and user is redirected in detailed view screen");
 
-        driver.navigate().back();
+        validation.backButtonContactDetailView.click();
         validation.homeButton.click();
         log.info("Navigating on home page");
     }

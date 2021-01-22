@@ -39,6 +39,7 @@ public class AddNewContactEmailValidationTest extends LoginTest {
         }
         log.info("Tapping on \"New person\" button");
 
+        wait.until(ExpectedConditions.visibilityOf(validation.lastName));
         validation.lastName.sendKeys("DDD");
         log.info("Adding last name");
         validation.email.sendKeys("Don");
@@ -71,7 +72,7 @@ public class AddNewContactEmailValidationTest extends LoginTest {
         Assert.assertTrue(validation.editButton.isDisplayed());
         log.info("Verifying that contact has been added and user is redirected in detailed view screen");
 
-        driver.navigate().back();
+        validation.backButtonContactDetailView.click();
         validation.homeButton.click();
         log.info("Navigating on home page");
     }
