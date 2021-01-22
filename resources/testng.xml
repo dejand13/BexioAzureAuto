@@ -1,19 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="LogIn and Home Screen Tests">
     <listeners>
         <listener class-name="com.bexio.init.Listeners"/>
     </listeners>
-    <test verbose="2" preserve-order="true" name="C:/Users/ddoneski/IdeaProjects/BexioGo/src">
+    <test name="Scenes Verification">
         <classes>
-<!--            <class name="com.bexio.logInHomeScreen.ForgotPassTest"/>-->
-<!--            <class name="com.bexio.logInHomeScreen.LogInRejectRequestAccessTest"/>-->
-            <class name="com.bexio.logInHomeScreen.RecommendationSentGPTest"/>
-            <class name="com.bexio.logInHomeScreen.RecommendInvalidAlreadySentGPTest"/>
-            <class name="com.bexio.logInHomeScreen.RemoveExistingAccountTest"/>
             <class name="com.bexio.logInHomeScreen.SceneVerificationTest"/>
+        </classes>
+    </test>
+    <test name="Forgot Password">
+        <classes>
+            <class name="com.bexio.logInHomeScreen.ForgotPassTest"/>
+        </classes>
+    </test>
+    <test name="Reject Request Access">
+        <classes>
+            <class name="com.bexio.logInHomeScreen.LogInRejectRequestAccessTest"/>
+        </classes>
+    </test>
+    <test name="Recommend Bexio - Recommendation Sent">
+        <classes>
+            <class name="com.bexio.logInHomeScreen.RecommendationSentGPTest"/>
+        </classes>
+    </test>
+    <test name="Recommend Bexio-Invalid email address/Already sent recommendation to the entered email address">
+        <classes>
+            <class name="com.bexio.logInHomeScreen.RecommendInvalidAlreadySentGPTest"/>
+        </classes>
+    </test>
+    <test name="Send Feedback">
+        <classes>
             <class name="com.bexio.logInHomeScreen.SendFeedbackTest"/>
+        </classes>
+    </test>
+    <test name="Switch Company">
+        <classes>
             <class name="com.bexio.logInHomeScreen.SwitchCompanyTest"/>
+        </classes>
+    </test>
+    <test name="Remove existing accounts">
+        <classes>
+            <class name="com.bexio.logInHomeScreen.RemoveExistingAccountTest"/>
         </classes>
     </test>
 </suite>
