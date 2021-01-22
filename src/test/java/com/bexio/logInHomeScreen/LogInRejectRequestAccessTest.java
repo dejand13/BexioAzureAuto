@@ -23,7 +23,7 @@ public class LogInRejectRequestAccessTest extends DriverInit {
             driver.switchTo().alert().accept();
             log.info("Allow notifications dialog has been accepted");
         } catch (Exception e) {
-            log.info("Allow notification dialog is not displayed on android");
+            log.info("Allow notification dialog is not displayed");
         }
 //        loginPage.password.sendKeys(prop.getProperty("pass"));
             loginPage.password.sendKeys("#{pass}#");
@@ -52,7 +52,7 @@ public class LogInRejectRequestAccessTest extends DriverInit {
         Assert.assertTrue(loginPage.allowAccessToCompany.isDisplayed());
 
         loginPage.rejectAccess.click();
-        log.info("Requested access has been rejected for: " + comName + "company");
+        log.info("Requested access has been rejected for: " + comName + " company");
         Assert.assertTrue(loginPage.forgotPassLogInLink.isDisplayed());
         log.info("User is redirected on login page");
     }

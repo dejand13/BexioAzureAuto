@@ -42,8 +42,7 @@ public class LoginTest extends DriverInit {
 
         wait.until(ExpectedConditions.visibilityOf(loginPage.availabilityOfLogInCompanyNamesList));
 //        Choosing the desired company from the multiple companies
-//        String comName = companyName;
-            String comName = ("#{companyName}#");
+        String comName = companyName;
         Boolean companyFound = false;
         for (int i = 0; i < loginPage.logInCompanyNamesList.size(); i++) {
             if(loginPage.logInCompanyNamesList.get(i).getText().contains(comName)) {
