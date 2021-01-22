@@ -6,14 +6,14 @@
     </listeners>
     <test verbose="2" preserve-order="true" name="C:/Users/ddoneski/IdeaProjects/BexioGo/src">
         <classes>
-            <class name="com.bexio.logInHomeScreen.ForgotPassTest"/>
+<!--            <class name="com.bexio.logInHomeScreen.ForgotPassTest"/>-->
+<!--            <class name="com.bexio.logInHomeScreen.LogInRejectRequestAccessTest"/>-->
+            <class name="com.bexio.logInHomeScreen.RecommendationSentGPTest"/>
             <class name="com.bexio.logInHomeScreen.RecommendInvalidAlreadySentGPTest"/>
             <class name="com.bexio.logInHomeScreen.RemoveExistingAccountTest"/>
             <class name="com.bexio.logInHomeScreen.SceneVerificationTest"/>
             <class name="com.bexio.logInHomeScreen.SendFeedbackTest"/>
             <class name="com.bexio.logInHomeScreen.SwitchCompanyTest"/>
-            <class name="com.bexio.logInHomeScreen.RecommendationSentGPTest"/>
-            <class name="com.bexio.logInHomeScreen.LogInRejectRequestAccessTest"/>
         </classes>
     </test>
 </suite>
