@@ -57,15 +57,10 @@ public class LoginTest extends DriverInit {
             throw new Exception("It appears that the desired company does NOT exist in this account");
         }
 
-        Dimension scrollDown = driver.manage().window().getSize();
-        int x = scrollDown.getWidth()/2;
-        int startScroll = (int) (scrollDown.getHeight()*0.6);
-        int endScroll = (int) (scrollDown.getHeight()*0.1);
-        TouchAction touch = new TouchAction(driver);
-
             try{
                 loginPage.viewEditContacts.isDisplayed();
-                touch.longPress(PointOption.point(x,startScroll)).moveTo(PointOption.point(x,endScroll)).release().perform();
+                scrollPointOption(0.6,0.1);
+//                touch.longPress(PointOption.point(x,startScroll)).moveTo(PointOption.point(x,endScroll)).release().perform();
                 Thread.sleep(2000L);
                 if(access.contains("differentCompany")) {
                     loginPage.selectDiffCompany.click();
@@ -86,6 +81,16 @@ public class LoginTest extends DriverInit {
             catch (Exception e){
                log.info("User has already granted permissions in this company in some previous login");
             }
+    }
+
+    public void scrollPointOption(double startPositionPercentage, double endPositionPercentage){
+        Dimension scrollDown = driver.manage().window().getSize();
+        int scroll = scrollDown.getWidth()/2;
+        int startScroll = (int) (scrollDown.getHeight()*startPositionPercentage);
+        int endScroll = (int) (scrollDown.getHeight()*endPositionPercentage);
+
+        TouchAction touch = new TouchAction(driver);
+        touch.longPress(PointOption.point(scroll,startScroll)).moveTo(PointOption.point(scroll,endScroll)).release().perform();
     }
 
     @AfterTest

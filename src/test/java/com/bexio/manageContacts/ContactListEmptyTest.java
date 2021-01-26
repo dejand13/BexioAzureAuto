@@ -3,8 +3,6 @@ package com.bexio.manageContacts;
 import com.bexio.init.DriverInit;
 import com.bexio.init.Selectors;
 import com.bexio.logInHomeScreen.LoginTest;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.touch.offset.PointOption;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -35,18 +33,13 @@ public class ContactListEmptyTest extends DriverInit {
         noContacts.addContactButton.click();
         log.info("Tapping on add contact button");
 
-        int widthOfScreen = driver.manage().window().getSize().getWidth();
-        int heightOfScreen = driver.manage().window().getSize().getHeight();
-        int x = (int) (widthOfScreen * 0.65);
-        int y = (int) (heightOfScreen * 0.45);
-
-        TouchAction touch = new TouchAction(driver);
 //        String executionStore = prop.getProperty("store");
         String executionStore = ("#{store}#");
         if(executionStore.equalsIgnoreCase("android")) {
             noContacts.newPerson.click();
         } else{
-            touch.tap(PointOption.point(x,y)).perform();
+            AddContactTest newPerson = new AddContactTest();
+            newPerson.newPersonCompanyCoordinates(0.65,0.45);
         }
         log.info("Tapping on \"New person\" button");
         Assert.assertTrue(noContacts.lastName.isDisplayed());

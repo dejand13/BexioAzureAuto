@@ -45,7 +45,7 @@ public class EmailValidationNewPersonTest extends LoginTest {
                 validation.newCompany.click();
             } else {
                 AddContactTest newCompany = new AddContactTest();
-                newCompany.newPersonCompanyCoordinates(0.65, 0.65);
+                newCompany.newPersonCompanyCoordinates(0.65, 0.52);
             }
             log.info("Tapping on \"New company\" button");
             wait.until(ExpectedConditions.visibilityOf(validation.companyName));

@@ -9,6 +9,6 @@ public class CompanyNameValidationTest extends LoginTest {
     @Test
     public void companyNameValidation() throws InterruptedException {
         LastNameValidationTest validation = new LastNameValidationTest();
-        validation.lastNameValidation(true);
+        validation.lastNameValidation(false);
     }
 }

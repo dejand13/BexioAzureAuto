@@ -55,7 +55,7 @@ public class LastNameValidationTest extends LoginTest {
                 validation.newCompany.click();
             } else {
                 AddContactTest addNewCompany = new AddContactTest();
-                addNewCompany.newPersonCompanyCoordinates(0.65, 0.65);
+                addNewCompany.newPersonCompanyCoordinates(0.65, 0.52);
             }
             log.info("Tapping on \"New company\" button");
 
