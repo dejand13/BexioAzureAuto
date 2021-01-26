@@ -11,8 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AddNewContactEmailValidationTest extends LoginTest {
-    public static Logger log = LogManager.getLogger(AddNewContactEmailValidationTest.class.getName());
+public class EmailValidationTest extends LoginTest {
+    public static Logger log = LogManager.getLogger(EmailValidationTest.class.getName());
 
     @Test
     public void emailValidation() throws Exception {

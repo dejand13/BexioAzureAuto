@@ -11,8 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AddNewContactLastNameValidationTest extends LoginTest {
-    public static Logger log = LogManager.getLogger(AddNewContactLastNameValidationTest.class.getName());
+public class LastNameValidationTest extends LoginTest {
+    public static Logger log = LogManager.getLogger(LastNameValidationTest.class.getName());
 
     @Test
     public void lastNameValidation() throws InterruptedException {
