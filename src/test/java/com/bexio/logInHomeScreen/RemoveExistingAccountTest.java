@@ -18,7 +18,7 @@ public class RemoveExistingAccountTest extends LoginTest {
 
         SwitchCompanyTest removeTest = new SwitchCompanyTest();
         removeTest.addNewCompany();
-        
+
         wait.until(ExpectedConditions.visibilityOf(removeAccount.myBexioAccounts));
         removeAccount.myBexioAccounts.click();
         log.info("Navigating in my bexio accounts scene");
@@ -36,7 +36,7 @@ public class RemoveExistingAccountTest extends LoginTest {
         Assert.assertTrue(removeAccount.logginButton.isDisplayed());
         log.info("Verifying that login form has been displayed");
 
-//        loginCredentials(prop.getProperty("secondCompanyName"));
-        loginCredentials("#{secondCompanyName}#");
+//        loginCredentials(prop.getProperty("secondCompanyName"),"allow");
+        loginCredentials(("#{secondCompanyName}#"),"allow");
     }
 }

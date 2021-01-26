@@ -57,6 +57,10 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='View & edit your contacts']")
     public WebElement viewEditContacts;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Select a different company.']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='Select a different company.']")
+    public WebElement selectDiffCompany;
+
     //    Home screen selectors
     @AndroidFindBy(xpath = "//android.widget.TextView")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText")
@@ -165,6 +169,18 @@ public class Selectors {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='emailAddress@gmail.com']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='emailAddress@gmail.com']")
     public WebElement emailAddressAutomationContact;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='LastName, FirstName']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF007 LastName, FirstName Email@email.com']")
+    public WebElement searchContactResultName;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Email@email.com']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF007 LastName, FirstName Email@email.com']")
+    public WebElement searchContactResultEmail;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='No contacts found']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='No contacts found']")
+    public WebElement noContactsFound;
 
 //    Add Contact
 
@@ -305,6 +321,14 @@ public class Selectors {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF015']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF053']")
     public WebElement backButtonContactDetailView;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Contact list empty.']")
+    @iOSXCUITFindBy(accessibility = "Contact list empty.")
+    public WebElement contactListEmpty;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF015']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF00D']")
+    public WebElement manageContactsXButton;
 
     //    Edit Contact
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067']")

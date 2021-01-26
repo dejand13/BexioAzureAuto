@@ -19,10 +19,10 @@ public class LoginTest extends DriverInit {
     @BeforeTest
     public void loginTest() throws Exception {
         initDriver();
-//        loginCredentials(prop.getProperty("companyName"));
-        loginCredentials("#{companyName}#");
+//        loginCredentials(prop.getProperty("companyName"),"allow");
+        loginCredentials(("#{companyName}#"),"allow");
     }
-    public void loginCredentials(String companyName) throws Exception {
+    public void loginCredentials(String companyName, String access) throws Exception {
         WebDriverWait wait = new WebDriverWait(driver,10);
 //        Fulfilling the text boxes and logging in
         Selectors loginPage = new Selectors(driver);
@@ -66,17 +66,26 @@ public class LoginTest extends DriverInit {
             try{
                 loginPage.viewEditContacts.isDisplayed();
                 touch.longPress(PointOption.point(x,startScroll)).moveTo(PointOption.point(x,endScroll)).release().perform();
-                loginPage.allowAccessToCompany.click();
-                log.info("Access to " + comName + "has been allowed");
+                Thread.sleep(2000L);
+                if(access.contains("differentCompany")) {
+                    loginPage.selectDiffCompany.click();
+                    log.info("Select different company has been tapped");
+                } else if(access.contains("reject")){
+                    loginPage.rejectAccess.click();
+                    log.info("Access to " + comName + "has been rejected");
+                } else {
+                    loginPage.allowAccessToCompany.click();
+                    log.info("Access to " + comName + "has been allowed");
+                    wait.until(ExpectedConditions.visibilityOf(loginPage.myBexioAccounts));
+//        Verifying that user is navigated on the chosen company home screen
+                    String homeScreenCompanyName = loginPage.homeScreenCompanyName.getText();
+                    Assert.assertEquals(homeScreenCompanyName, comName);
+                }
             }
 
             catch (Exception e){
                log.info("User has already granted permissions in this company in some previous login");
             }
-        wait.until(ExpectedConditions.visibilityOf(loginPage.myBexioAccounts));
-//        Verifying that user is navigated on the chosen company home screen
-        String homeScreenCompanyName = loginPage.homeScreenCompanyName.getText();
-//            Assert.assertEquals(homeScreenCompanyName, comName);
     }
 
     @AfterTest

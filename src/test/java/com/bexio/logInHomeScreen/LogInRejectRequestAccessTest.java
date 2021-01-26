@@ -18,42 +18,10 @@ public class LogInRejectRequestAccessTest extends DriverInit {
 //        Fulfilling the text boxes and logging in
         Selectors loginPage = new Selectors(driver);
 
-        try {
-            loginPage.allowNotificationDialog.isDisplayed();
-            driver.switchTo().alert().accept();
-            log.info("Allow notifications dialog has been accepted");
-        } catch (Exception e) {
-            log.info("Allow notification dialog is not displayed");
-        }
-//        loginPage.password.sendKeys(prop.getProperty("pass"));
-            loginPage.password.sendKeys("#{pass}#");
-//        loginPage.username.sendKeys(prop.getProperty("username"));
-            loginPage.username.sendKeys("#{username}#");
-        loginPage.logginButton.click();
-        log.info("Credentials has been added and login button is tapped");
+        LoginTest login = new LoginTest();
+//        login.loginCredentials(prop.getProperty("secondCompanyName"),"reject");
+        login.loginCredentials(("#{secondCompanyName}#"),"reject");
 
-        wait.until(ExpectedConditions.visibilityOf(loginPage.availabilityOfLogInCompanyNamesList));
-//        Choosing the desired company from the multiple companies
-//        String comName = prop.getProperty("secondCompanyName");
-            String comName = ("#{secondCompanyName}#");
-        Boolean companyFound = false;
-        for (int i = 0; i < loginPage.logInCompanyNamesList.size(); i++) {
-            if(loginPage.logInCompanyNamesList.get(i).getText().contains(comName)) {
-                loginPage.logInCompanyNamesList.get(i).click();
-                companyFound = true;
-                log.info("Desired company has been tapped. You have chosen: " + comName);
-                break;
-            }
-        }
-        if(companyFound == false) {
-            log.error("It appears that the desired company does NOT exist in this account");
-            throw new Exception("It appears that the desired company does NOT exist in this account");
-        }
-
-        Assert.assertTrue(loginPage.allowAccessToCompany.isDisplayed());
-
-        loginPage.rejectAccess.click();
-        log.info("Requested access has been rejected for: " + comName + " company");
         Assert.assertTrue(loginPage.forgotPassLogInLink.isDisplayed());
         log.info("User is redirected on login page");
     }

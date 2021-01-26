@@ -50,8 +50,8 @@ public class SwitchCompanyTest extends LoginTest {
         log.info("Navigating in 'My bexio Accounts' scene");
         switchCompany.myBexioAccAddCompany.click();
         log.info("Tapping on add new company/plus button");
-//        loginCredentials(prop.getProperty("secondCompanyName"));
-        loginCredentials("#{secondCompanyName}#");
+//        loginCredentials(prop.getProperty("secondCompanyName"),"allow");
+        loginCredentials(("#{secondCompanyName}#"),"allow");
         log.info("Logging in again to new company");
     }
 }
