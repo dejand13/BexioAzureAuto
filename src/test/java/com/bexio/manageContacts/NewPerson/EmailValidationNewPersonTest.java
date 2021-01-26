@@ -1,9 +1,8 @@
-package com.bexio.manageContacts;
+package com.bexio.manageContacts.NewPerson;
 
 import com.bexio.init.Selectors;
 import com.bexio.logInHomeScreen.LoginTest;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.touch.offset.PointOption;
+import com.bexio.manageContacts.AddContactTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,11 +10,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class EmailValidationTest extends LoginTest {
-    public static Logger log = LogManager.getLogger(EmailValidationTest.class.getName());
+public class EmailValidationNewPersonTest extends LoginTest {
+    public static Logger log = LogManager.getLogger(EmailValidationNewPersonTest.class.getName());
 
     @Test
-    public void emailValidation() throws Exception {
+    public void emailValidationNewPerson() throws Exception {
+        emailValidation(true);
+    }
+
+    public void emailValidation(boolean newPerson) throws Exception {
         WebDriverWait wait = new WebDriverWait(driver,10);
         Selectors validation = new Selectors(driver);
 
@@ -24,25 +27,33 @@ public class EmailValidationTest extends LoginTest {
         validation.addContactButton.click();
         log.info("Tapping on add new contact button");
 
-        int widthOfScreen = driver.manage().window().getSize().getWidth();
-        int heightOfScreen = driver.manage().window().getSize().getHeight();
-        int x = (int) (widthOfScreen * 0.65);
-        int y = (int) (heightOfScreen * 0.45);
-
-        TouchAction touch = new TouchAction(driver);
 //        String executionStore = prop.getProperty("store");
         String executionStore = ("#{store}#");
-        if(executionStore.equalsIgnoreCase("android")) {
-            validation.newPerson.click();
-        } else{
-            touch.tap(PointOption.point(x,y)).perform();
+        if(newPerson) {
+            if (executionStore.equalsIgnoreCase("android")) {
+                validation.newPerson.click();
+            } else {
+                AddContactTest addNewPerson = new AddContactTest();
+                addNewPerson.newPersonCompanyCoordinates(0.65, 0.45);
+            }
+            log.info("Tapping on \"New person\" button");
+            wait.until(ExpectedConditions.visibilityOf(validation.lastName));
+            validation.lastName.sendKeys("Last name");
+            log.info("Adding last name");
+        } else {
+            if (executionStore.equalsIgnoreCase("android")) {
+                validation.newCompany.click();
+            } else {
+                AddContactTest newCompany = new AddContactTest();
+                newCompany.newPersonCompanyCoordinates(0.65, 0.65);
+            }
+            log.info("Tapping on \"New company\" button");
+            wait.until(ExpectedConditions.visibilityOf(validation.companyName));
+            validation.companyName.sendKeys("Company name");
+            log.info("Adding company name");
         }
-        log.info("Tapping on \"New person\" button");
 
-        wait.until(ExpectedConditions.visibilityOf(validation.lastName));
-        validation.lastName.sendKeys("DDD");
-        log.info("Adding last name");
-        validation.email.sendKeys("Don");
+        validation.email.sendKeys("invalidEmail");
         log.info("Adding invalid email address");
 
         validation.addContactSaveButton.click();

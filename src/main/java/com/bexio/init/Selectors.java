@@ -192,6 +192,12 @@ public class Selectors {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='New company']")
     public WebElement newCompany;
 
+    @AndroidFindBy(xpath = "//android.widget.EditText[@text='Company name']")
+    public WebElement companyName;
+
+    @AndroidFindBy(xpath = "//android.widget.EditText[@text='Name suffix']")
+    public WebElement nameSuffix;
+
     @AndroidFindBy(xpath = "(//android.view.ViewGroup/android.view.ViewGroup/android.widget.EditText)[1]")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@value='Last name']")
     public WebElement lastName;
@@ -274,6 +280,10 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Switzerland \uF0D7\"])[2]")
     public WebElement country;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Switzerland']")
+    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Switzerland \uF0D7\"])[2]")
+    public WebElement defaultCountrySwiss;
+
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@index='7']/android.view.ViewGroup/android.widget.TextView[@text='Bulgaria']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Bulgaria\"])[2]")
     public WebElement countryBulgaria;
@@ -334,6 +344,11 @@ public class Selectors {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF304\"])[2]")
     public WebElement editButton;
+
+    // Added Contact - Detailed view
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Switzerland']")
+    @iOSXCUITFindBy(accessibility = "Switzerland")
+    public WebElement countryDetailedView;
 
     //    My bexio Accounts
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067']")
