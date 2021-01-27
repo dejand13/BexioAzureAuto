@@ -174,9 +174,18 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF007 LastName, FirstName Email@email.com']")
     public WebElement searchContactResultName;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Email@email.com']")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF007 LastName, FirstName Email@email.com']")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Company name Name suffix']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF1AD Company name Name suffix EmailComVer@email.com']")
+    public WebElement searchCompanyResultName;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='EmailPersonVer@email.com']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF007 LastName, FirstName EmailPersonVer@email.com']")
     public WebElement searchContactResultEmail;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='EmailComVer@email.com']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF1AD Company name Name suffix EmailComVer@email.com']")
+//    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF1AD Company name Name suffix EmailComVer@email.com\"])[3]")
+    public WebElement searchCompanyResultEmail;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='No contacts found']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='No contacts found']")
@@ -187,6 +196,15 @@ public class Selectors {
     //For iOS we are not able to select the element(selectors from BG element are given)
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='New person']")
     public WebElement newPerson;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF007']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF007 LastName, FirstName Email@email.com']")
+    public WebElement personAvatar;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF1AD']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF1AD Company name Name suffix EmailComVer@email.com']")
+//    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF1AD Company name Name suffix EmailComVer@email.com\"])[3]")
+    public WebElement companyAvatar;
 
     //For iOS we are not able to select the element(selectors from BG element are given)
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='New company']")
@@ -208,7 +226,7 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@value='First name']")
     public WebElement firstName;
 
-    @AndroidFindBy(xpath = "//android.view.ViewGroup[@index='2']/android.view.ViewGroup/android.widget.TextView")
+    @AndroidFindBy(xpath = "//android.view.ViewGroup[@index='2']/android.view.ViewGroup/android.widget.TextView[@text=Choose]")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther)[1]")
     public WebElement formOfAddress;
 
@@ -217,7 +235,7 @@ public class Selectors {
     public WebElement formOfAddressMr;
 
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@index='3']/android.view.ViewGroup/android.widget.TextView")
-    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther/XCUIElementTypeOther[3]/XCUIElementTypeOther[@name='Choose \uF0D7']")
+    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Choose \uF0D7\"])[2]")
     public WebElement title;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Dr.']")
@@ -225,7 +243,8 @@ public class Selectors {
     public WebElement titleDr;
 
     @AndroidFindBy(xpath = "//android.view.ViewGroup[@index='4']/android.view.ViewGroup/android.widget.TextView")
-    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther)[3]")
+//    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"Choose \uF0D7\"])[1]")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name=\"Language of correspondence Choose \uF0D7\"]/XCUIElementTypeOther[@name='Choose \uF0D7']")
     public WebElement languageOfCorrespondence;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Italian']")
@@ -303,7 +322,7 @@ public class Selectors {
     public WebElement category;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='QA!']")
-    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF0C8 QA!\"])[2]")
+    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name='\uF0C8 QA!'])[2]")
     public WebElement categoryQA;
 
     @AndroidFindBy(xpath = "(//android.view.ViewGroup[@index='5']/android.view.ViewGroup[@index='2']/android.view.ViewGroup/android.widget.TextView)")
@@ -311,7 +330,7 @@ public class Selectors {
     public WebElement sectors;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Sector 1B']")
-    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF0C8 Sector 1B\"])[2]")
+    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name='\uF0C8 Sector 1B'])[2]")
     public WebElement sector1B;
 
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Save']")
@@ -351,6 +370,69 @@ public class Selectors {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Switzerland']")
     @iOSXCUITFindBy(accessibility = "Switzerland")
     public WebElement countryDetailedView;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF0E0']")
+    @iOSXCUITFindBy(accessibility = "\uF0E0")
+    public WebElement emailIcon;
+
+    @AndroidFindBy(accessibility = "//android.widget.ImageView[@text='Attach File']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='Mail.ccBccMultiField']")
+    public WebElement tapMailSymbol;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF095']")
+    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF095\"])[1]")
+    public WebElement phoneIcon;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='WXYZ']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeCell/XCUIElementTypeStaticText")
+    public WebElement callNumber;
+
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='Cancel']")
+    public WebElement cancelCallNumber;
+
+    @AndroidFindBy(xpath = "(//android.widget.TextView[@text='\uF095'])[2]")
+    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF095\"])[2]")
+    public WebElement mobilePhoneIcon;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF086']")
+    @iOSXCUITFindBy(accessibility = "\uF086")
+    public WebElement mobileMessageIcon;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Text copied to clipboard.']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='Text copied to clipboard.']")
+    public WebElement copiedToClipboard;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='EmailComVer@email.com']")
+    @iOSXCUITFindBy(accessibility = "EmailComVer@email.com")
+    public WebElement copiedToClipboardEmail;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Email2ComVer@email.com']")
+    @iOSXCUITFindBy(accessibility = "Email2ComVer@email.com")
+    public WebElement copiedToClipboardEmail2;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='0002444555']")
+    @iOSXCUITFindBy(accessibility = "0002444555")
+    public WebElement copiedToClipboardPhone;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='0038979333444']")
+    @iOSXCUITFindBy(accessibility = "0038979333444")
+    public WebElement copiedToClipboardMobile;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Switzerland']")
+    @iOSXCUITFindBy(accessibility = "Switzerland")
+    public WebElement copiedToClipboardSwitzerland;
+
+    @AndroidFindBy(accessibility = "Navigate up")
+    @iOSXCUITFindBy(accessibility = "+389 79333444, +38979333444")
+    public WebElement tapMessageChatSymbol;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF3C5']")
+    @iOSXCUITFindBy(accessibility = "\uF3C5")
+    public WebElement locationIcon;
+
+    @AndroidFindBy(xpath = "//android.widget.Button[@text='Directions']")
+    @iOSXCUITFindBy(accessibility = "Tracking")
+    public WebElement tapLocationSymbol;
 
     //    My bexio Accounts
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067']")
