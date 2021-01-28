@@ -18,15 +18,15 @@ public class CompanyAlreadyAddedTest extends DriverInit {
         Selectors companyAlreadyAdded = new Selectors(driver);
         WebDriverWait wait = new WebDriverWait(driver,10);
         LoginTest login = new LoginTest();
-        login.loginCredentials(prop.getProperty("secondCompanyName"),"allow");
-//        login.loginCredentials(("#{companyName}#"),"allow");
+//        login.loginCredentials(prop.getProperty("secondCompanyName"),"allow");
+        login.loginCredentials(("#{companyName}#"),"allow");
 
         SwitchCompanyTest addCompany = new SwitchCompanyTest();
-        addCompany.addNewCompany(prop.getProperty("companyName"));
-//        addNewCompany("#{secondCompanyName}#");
+//        addCompany.addNewCompany(prop.getProperty("companyName"));
+        addCompany.addNewCompany("#{secondCompanyName}#");
 
-        addCompany.addNewCompany(prop.getProperty("secondCompanyName"));
-//        addNewCompany("#{secondCompanyName}#");
+//        addCompany.addNewCompany(prop.getProperty("secondCompanyName"));
+        addCompany.addNewCompany("#{secondCompanyName}#");
 
         wait.until(ExpectedConditions.visibilityOf(companyAlreadyAdded.companyAddedToastMessage));
         Assert.assertTrue(companyAlreadyAdded.companyAddedToastMessage.isDisplayed());
