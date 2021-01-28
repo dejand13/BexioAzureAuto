@@ -71,10 +71,6 @@ public class LoginTest extends DriverInit {
                 } else {
                     loginPage.allowAccessToCompany.click();
                     log.info("Access to " + comName + "has been allowed");
-                    wait.until(ExpectedConditions.visibilityOf(loginPage.myBexioAccounts));
-//        Verifying that user is navigated on the chosen company home screen
-                    String homeScreenCompanyName = loginPage.homeScreenCompanyName.getText();
-                    Assert.assertEquals(homeScreenCompanyName, comName);
                 }
             }
 

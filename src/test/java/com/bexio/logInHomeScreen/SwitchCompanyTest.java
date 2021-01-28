@@ -15,7 +15,8 @@ public class SwitchCompanyTest extends LoginTest {
     public void switchCompany() throws Exception {
 
         Selectors switchCompany = new Selectors(driver);
-        addNewCompany();
+//        addNewCompany(prop.getProperty("secondCompanyName"));
+        addNewCompany("#{secondCompanyName}#");
         switchCompany.switchCompanyLeftArrow.click();
         log.info("Switching company by tapping on left arrow");
 
@@ -44,14 +45,13 @@ public class SwitchCompanyTest extends LoginTest {
 //        Assert.assertEquals(secondHomeScreenCompanyName, prop.getProperty("secondCompanyName"));
         Assert.assertEquals(secondHomeScreenCompanyName, "#{companyName}#");
     }
-    public void addNewCompany() throws Exception {
+    public void addNewCompany(String companyName) throws Exception {
         Selectors switchCompany = new Selectors(driver);
         switchCompany.myBexioAccounts.click();
         log.info("Navigating in 'My bexio Accounts' scene");
         switchCompany.myBexioAccAddCompany.click();
         log.info("Tapping on add new company/plus button");
-//        loginCredentials(prop.getProperty("secondCompanyName"),"allow");
-        loginCredentials(("#{secondCompanyName}#"),"allow");
+        loginCredentials(companyName,"allow");
         log.info("Logging in again to new company");
     }
 }

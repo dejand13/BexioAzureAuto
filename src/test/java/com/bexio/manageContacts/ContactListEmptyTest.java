@@ -3,6 +3,7 @@ package com.bexio.manageContacts;
 import com.bexio.init.DriverInit;
 import com.bexio.init.Selectors;
 import com.bexio.logInHomeScreen.LoginTest;
+import com.bexio.manageContacts.NewPerson.AddContactTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;

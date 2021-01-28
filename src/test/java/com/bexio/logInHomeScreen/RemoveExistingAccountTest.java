@@ -15,10 +15,11 @@ public class RemoveExistingAccountTest extends LoginTest {
     public void removeExistingAccout() throws Exception {
         WebDriverWait wait = new WebDriverWait(driver,10);
         Selectors removeAccount = new Selectors(driver);
-
         SwitchCompanyTest removeTest = new SwitchCompanyTest();
-        removeTest.addNewCompany();
+//        removeTest.addNewCompany(prop.getProperty("secondCompanyName"));
+        removeTest.addNewCompany("#{secondCompanyName}#");
 
+        Thread.sleep(3000L);
         wait.until(ExpectedConditions.visibilityOf(removeAccount.myBexioAccounts));
         removeAccount.myBexioAccounts.click();
         log.info("Navigating in my bexio accounts scene");

@@ -61,6 +61,10 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='Select a different company.']")
     public WebElement selectDiffCompany;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Company already added.']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='Company already added.']")
+    public WebElement companyAddedToastMessage;
+
     //    Home screen selectors
     @AndroidFindBy(xpath = "//android.widget.TextView")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText")
