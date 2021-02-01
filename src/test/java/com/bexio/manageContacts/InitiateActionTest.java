@@ -15,9 +15,6 @@ public class InitiateActionTest extends LoginTest {
 
     @Test
     public void initiateAction() throws MalformedURLException, InterruptedException {
-//        String executionStore = prop.getProperty("store");
-        String executionStore = ("#{store}#");
-
         Selectors initiateAction = new Selectors(driver);
         initiateAction.manageContacts.click();
         log.info("Navigating in Manage Contacts scene");

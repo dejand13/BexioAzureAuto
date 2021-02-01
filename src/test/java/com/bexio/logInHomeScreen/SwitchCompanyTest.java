@@ -15,20 +15,17 @@ public class SwitchCompanyTest extends LoginTest {
     public void switchCompany() throws Exception {
 
         Selectors switchCompany = new Selectors(driver);
-//        addNewCompany(prop.getProperty("secondCompanyName"));
-        addNewCompany("#{secondCompanyName}#");
+        addNewCompany(secondCompanyName);
         switchCompany.switchCompanyLeftArrow.click();
         log.info("Switching company by tapping on left arrow");
 
         String homeScreenCompanyName = switchCompany.switchCompanyNames.getText();
-//        Assert.assertEquals(homeScreenCompanyName, prop.getProperty("companyName"));
-        Assert.assertEquals(homeScreenCompanyName, "#{companyName}#");
+        Assert.assertEquals(homeScreenCompanyName, companyName);
         log.info("Verifying that left arrow has been tapped and company has been switched");
         switchCompany.switchCompanyRightArrow.click();
         log.info("Switching company by tapping on right arrow");
         String secondHomeScreenCompanyName = switchCompany.switchCompanyNames.getText();
-//        Assert.assertEquals(secondHomeScreenCompanyName, prop.getProperty("secondCompanyName"));
-        Assert.assertEquals(secondHomeScreenCompanyName, "#{secondCompanyName}#");
+        Assert.assertEquals(secondHomeScreenCompanyName, secondCompanyName);
         log.info("Verifying that left arrow has been tapped and company has been switched");
 
         Dimension scrollDown = driver.manage().window().getSize();
@@ -39,11 +36,9 @@ public class SwitchCompanyTest extends LoginTest {
         TouchAction touch = new TouchAction(driver);
         touch.longPress(PointOption.point(startScroll,y)).moveTo(PointOption.point(endScroll,y)).release().perform();
         Thread.sleep(2000L);
-//        Assert.assertEquals(homeScreenCompanyName, prop.getProperty("companyName"));
-        Assert.assertEquals(homeScreenCompanyName, "#{companyName}#");
+        Assert.assertEquals(homeScreenCompanyName, companyName);
         touch.longPress(PointOption.point(startScroll,y)).moveTo(PointOption.point(endScroll,y)).release().perform();
-//        Assert.assertEquals(secondHomeScreenCompanyName, prop.getProperty("secondCompanyName"));
-        Assert.assertEquals(secondHomeScreenCompanyName, "#{companyName}#");
+        Assert.assertEquals(secondHomeScreenCompanyName, secondCompanyName);
     }
     public void addNewCompany(String companyName) throws Exception {
         Selectors switchCompany = new Selectors(driver);

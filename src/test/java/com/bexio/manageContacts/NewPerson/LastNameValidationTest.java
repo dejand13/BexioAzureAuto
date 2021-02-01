@@ -28,8 +28,6 @@ public class LastNameValidationTest extends LoginTest {
         log.info("Tapping on add new contact button");
         Thread.sleep(2000L);
 
-//        String executionStore = prop.getProperty("store");
-        String executionStore = ("#{store}#");
         if(newPerson) {
             if (executionStore.equalsIgnoreCase("android")) {
                 validation.newPerson.click();
@@ -47,8 +45,6 @@ public class LastNameValidationTest extends LoginTest {
 
             validation.lastName.sendKeys("Last name");
             log.info("Adding last name");
-            validation.addContactSaveButton.click();
-            log.info("Tapping on save button again");
         } else {
             if (executionStore.equalsIgnoreCase("android")) {
                 validation.newCompany.click();
@@ -66,9 +62,9 @@ public class LastNameValidationTest extends LoginTest {
 
             validation.companyName.sendKeys("Company name");
             log.info("Adding company name");
-            validation.addContactSaveButton.click();
-            log.info("Tapping on save button again");
         }
+        validation.addContactSaveButton.click();
+        log.info("Tapping on save button again");
 
         wait.until(ExpectedConditions.visibilityOf(validation.editButton));
         Assert.assertTrue(validation.editButton.isDisplayed());

@@ -23,13 +23,11 @@ public class SelectDifferentCompanyTest extends DriverInit {
         Selectors selectDiffCompany = new Selectors(driver);
 
         LoginTest login = new LoginTest();
-//        login.loginCredentials(prop.getProperty("secondCompanyName"),"differentCompany");
-        login.loginCredentials(("#{secondCompanyName}#"),"differentCompany");
+        login.loginCredentials(secondCompanyName,"differentCompany");
 
         wait.until(ExpectedConditions.visibilityOf(selectDiffCompany.availabilityOfLogInCompanyNamesList));
 //        Choosing the desired company from the multiple companies
-//        String comName = prop.getProperty("noContactsCompany");
-        String comName = "#{noContactsCompany}#";
+        String comName = noContactsCompany;
         Boolean companyFound = false;
         for (int i = 0; i < selectDiffCompany.logInCompanyNamesList.size(); i++) {
             if(selectDiffCompany.logInCompanyNamesList.get(i).getText().contains(comName)) {

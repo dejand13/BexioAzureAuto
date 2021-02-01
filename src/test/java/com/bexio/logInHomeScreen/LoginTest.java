@@ -19,10 +19,9 @@ public class LoginTest extends DriverInit {
     @BeforeTest
     public void loginTest() throws Exception {
         initDriver();
-//        loginCredentials(prop.getProperty("companyName"),"allow");
-        loginCredentials(("#{companyName}#"),"allow");
+        loginCredentials(companyName,"allow");
     }
-    public void loginCredentials(String companyName, String access) throws Exception {
+    public void loginCredentials(String comName, String access) throws Exception {
         WebDriverWait wait = new WebDriverWait(driver,10);
 //        Fulfilling the text boxes and logging in
         Selectors loginPage = new Selectors(driver);
@@ -33,16 +32,13 @@ public class LoginTest extends DriverInit {
         } catch (Exception e) {
             log.info("Allow notification dialog is not displayed");
         }
-//        loginPage.password.sendKeys(prop.getProperty("pass"));
-            loginPage.password.sendKeys("#{pass}#");
-//        loginPage.username.sendKeys(prop.getProperty("username"));
-            loginPage.username.sendKeys("#{username}#");
+
+        loginPage.password.sendKeys(password);
+        loginPage.username.sendKeys(username);
         loginPage.logginButton.click();
         log.info("Credentials has been added and login button is tapped");
-
         wait.until(ExpectedConditions.visibilityOf(loginPage.availabilityOfLogInCompanyNamesList));
 //        Choosing the desired company from the multiple companies
-        String comName = companyName;
         Boolean companyFound = false;
         for (int i = 0; i < loginPage.logInCompanyNamesList.size(); i++) {
             if(loginPage.logInCompanyNamesList.get(i).getText().contains(comName)) {

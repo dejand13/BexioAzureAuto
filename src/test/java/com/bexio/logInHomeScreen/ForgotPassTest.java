@@ -24,8 +24,7 @@ public class ForgotPassTest extends DriverInit {
 
         forgotPass.forgotPassLogInLink.click();
         Thread.sleep(3000L);
-//        forgotPass.enterEmailForgotPass.sendKeys(prop.getProperty("invalidEmail"));
-        forgotPass.enterEmailForgotPass.sendKeys("#{invalidEmail}#");
+        forgotPass.enterEmailForgotPass.sendKeys(invalidEmail);
         try {
             forgotPass.requestNewPassButton.isDisplayed();
             forgotPass.requestNewPassButton.click();
@@ -36,8 +35,7 @@ public class ForgotPassTest extends DriverInit {
         Assert.assertTrue(forgotPass.notValidEmailAssert.isDisplayed());
         log.info("Invalid email address has been added.");
         forgotPass.enterEmailForgotPass.clear();
-//        forgotPass.enterEmailForgotPass.sendKeys(prop.getProperty("usernameForgot"));
-        forgotPass.enterEmailForgotPass.sendKeys("#{usernameForgot}#");
+        forgotPass.enterEmailForgotPass.sendKeys(usernameForgot);
         forgotPass.requestNewPassButton.click();
 
         Assert.assertTrue(forgotPass.linkSuccessfullySentAssert.isDisplayed());

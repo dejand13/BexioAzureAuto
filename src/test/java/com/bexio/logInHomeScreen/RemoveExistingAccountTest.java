@@ -16,8 +16,7 @@ public class RemoveExistingAccountTest extends LoginTest {
         WebDriverWait wait = new WebDriverWait(driver,10);
         Selectors removeAccount = new Selectors(driver);
         SwitchCompanyTest removeTest = new SwitchCompanyTest();
-//        removeTest.addNewCompany(prop.getProperty("secondCompanyName"));
-        removeTest.addNewCompany("#{secondCompanyName}#");
+        removeTest.addNewCompany(secondCompanyName);
 
         Thread.sleep(3000L);
         wait.until(ExpectedConditions.visibilityOf(removeAccount.myBexioAccounts));
@@ -37,7 +36,7 @@ public class RemoveExistingAccountTest extends LoginTest {
         Assert.assertTrue(removeAccount.logginButton.isDisplayed());
         log.info("Verifying that login form has been displayed");
 
-//        loginCredentials(prop.getProperty("secondCompanyName"),"allow");
-        loginCredentials(("#{secondCompanyName}#"),"allow");
+        loginCredentials(secondCompanyName,"allow");
+//        loginCredentials(("#{secondCompanyName}#"),"allow");
     }
 }

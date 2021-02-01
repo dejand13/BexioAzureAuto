@@ -27,7 +27,7 @@
             <class name="com.bexio.logInHomeScreen.RecommendInvalidAlreadySentGPTest"/>
         </classes>
     </test>
-    <test name="Remove existing accounts">
+    <test name="Remove Existing Accounts">
         <classes>
             <class name="com.bexio.logInHomeScreen.RemoveExistingAccountTest"/>
         </classes>
@@ -42,7 +42,7 @@
             <class name="com.bexio.logInHomeScreen.SendFeedbackTest"/>
         </classes>
     </test>
-    <test name="Select different company">
+    <test name="Select Different Company">
         <classes>
             <class name="com.bexio.logInHomeScreen.SelectDifferentCompanyTest"/>
         </classes>
@@ -52,10 +52,25 @@
             <class name="com.bexio.logInHomeScreen.SwitchCompanyTest"/>
         </classes>
     </test>
+    <test name="Company Already Added">
+        <classes>
+            <class name="com.bexio.logInHomeScreen.CompanyAlreadyAddedTest"/>
+        </classes>
+    </test>
+    <test name="No Connection Toast Message - My Bexio Add Account">
+        <classes>
+            <class name="com.bexio.logInHomeScreen.NoConnToastMessageMyBexioAddTest"/>
+        </classes>
+    </test>
 
 <!--    Manage Contacts-->
 <!--    NewPerson-->
 
+    <test name="Add Contact">
+        <classes>
+            <class name="com.bexio.manageContacts.NewPerson.AddContactTest"/>
+        </classes>
+    </test>
     <test name="Default Country New Person">
         <classes>
             <class name="com.bexio.manageContacts.NewPerson.DefaultCountryNewPersonTest"/>
@@ -69,6 +84,11 @@
     <test name="Last Name Validation">
         <classes>
             <class name="com.bexio.manageContacts.NewPerson.LastNameValidationTest"/>
+        </classes>
+    </test>
+    <test name="Search Contact Person">
+        <classes>
+            <class name="com.bexio.manageContacts.NewPerson.SearchContactPersonTest"/>
         </classes>
     </test>
 
@@ -87,6 +107,39 @@
     <test name="Email Validation New Company">
         <classes>
             <class name="com.bexio.manageContacts.NewCompany.EmailValidationNewCompanyTest"/>
+        </classes>
+    </test>
+    <test name="Search Contact Company">
+        <classes>
+            <class name="com.bexio.manageContacts.NewCompany.SearchContactCompanyTest"/>
+        </classes>
+    </test>
+
+<!--    Manage Contacts Global-->
+
+    <test name="Contact List Empty">
+        <classes>
+            <class name="com.bexio.manageContacts.ContactListEmptyTest"/>
+        </classes>
+    </test>
+    <test name="Copied To Clipboard">
+        <classes>
+            <class name="com.bexio.manageContacts.CopiedToClipboardText"/>
+        </classes>
+    </test>
+    <test name="Initiate Action">
+        <classes>
+            <class name="com.bexio.manageContacts.InitiateActionTest"/>
+        </classes>
+    </test>
+    <test name="No Contacts Found">
+        <classes>
+            <class name="com.bexio.manageContacts.NoContactsFoundTest"/>
+        </classes>
+    </test>
+    <test name="No Connection Toast Message Add New Contact">
+        <classes>
+            <class name="com.bexio.manageContacts.NoConnToastMessageAddNewContact"/>
         </classes>
     </test>
 </suite>

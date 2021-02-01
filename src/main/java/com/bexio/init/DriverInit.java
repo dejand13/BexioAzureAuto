@@ -22,6 +22,14 @@ public class DriverInit {
     public static AppiumDriver driver;
     public static Properties prop;
     public static Logger log = LogManager.getLogger(DriverInit.class.getName());
+    public static String executionStore;
+    public static String username;
+    public static String password;
+    public static String companyName;
+    public static String secondCompanyName;
+    public static String invalidEmail;
+    public static String usernameForgot;
+    public static String noContactsCompany;
 
     public static AppiumDriver initDriver() throws IOException {
         prop = new Properties();
@@ -29,8 +37,26 @@ public class DriverInit {
         FileInputStream data = new FileInputStream(src);
         prop.load(data);
 
-//        String executionStore = prop.getProperty("store");
-        String executionStore = ("#{store}#");
+// ------------- Data Properties -------------
+        executionStore = prop.getProperty("store");
+        username = prop.getProperty("username");
+        password = prop.getProperty("pass");
+        companyName = prop.getProperty("companyName");
+        secondCompanyName = prop.getProperty("secondCompanyName");
+        invalidEmail = prop.getProperty("invalidEmail");
+        usernameForgot = prop.getProperty("usernameForgot");
+        noContactsCompany = prop.getProperty("noContactsCompany");
+
+// ------------- Azure DevOps variables -------------
+//        executionStore = ("#{store}#");
+//        username = ("#{username}#");
+//        password = ("#{pass}#");
+//        companyName = ("#{companyName}#");
+//        secondCompanyName = ("#{secondCompanyName}#");
+//        invalidEmail = ("invalidEmail");
+//        usernameForgot = ("#{usernameForgot}#");
+//        noContactsCompany = ("#{noContactsCompany}#");
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         if (executionStore.equalsIgnoreCase("android")) {
             capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");

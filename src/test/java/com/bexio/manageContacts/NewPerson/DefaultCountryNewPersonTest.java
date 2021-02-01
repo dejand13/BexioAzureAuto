@@ -26,8 +26,6 @@ public class DefaultCountryNewPersonTest extends LoginTest {
         defaultCountry.addContactButton.click();
         log.info("Tapping on add new contact button");
 
-//        String executionStore = prop.getProperty("store");
-        String executionStore = ("#{store}#");
         if(newPerson) {
             if (executionStore.equalsIgnoreCase("android")) {
                 defaultCountry.newPerson.click();

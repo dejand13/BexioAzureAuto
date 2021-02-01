@@ -443,7 +443,6 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF067']")
     public WebElement myBexioAccAddCompany;
 
-
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Remove']")
     @iOSXCUITFindBy(accessibility = "Remove")
     public WebElement myBexioRemove;
@@ -451,6 +450,19 @@ public class Selectors {
     @AndroidFindBy(xpath = "//android.widget.Button[@text='REMOVE']")
     @iOSXCUITFindBy(accessibility = "Remove")
     public WebElement removeButtonDialog;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='No internet connection found! Newly created data can be uploaded at a later time. Some functions of the app may only be used to a limited extent.']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='No internet connection found! Newly created data can be uploaded at a later time. Some functions of the app may only be used to a limited extent.']")
+    public WebElement myBexioNoInternetToastMessage;
+
+    @iOSXCUITFindBy(accessibility = "airplane-mode-button")
+    public WebElement airplaneModeButton;
+
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='No SIM Card Installed']")
+    public WebElement noSimCardInstalled;
+
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[@name='OK']")
+    public WebElement noSimCardInstalledClose;
 
     //    Scanner scene selectors
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Scan and send to inbox']")

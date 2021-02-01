@@ -4,7 +4,6 @@ import com.bexio.init.DriverInit;
 import com.bexio.init.Selectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -19,8 +18,7 @@ public class LogInRejectRequestAccessTest extends DriverInit {
         Selectors loginPage = new Selectors(driver);
 
         LoginTest login = new LoginTest();
-//        login.loginCredentials(prop.getProperty("secondCompanyName"),"reject");
-        login.loginCredentials(("#{secondCompanyName}#"),"reject");
+        login.loginCredentials(secondCompanyName,"reject");
 
         Assert.assertTrue(loginPage.forgotPassLogInLink.isDisplayed());
         log.info("User is redirected on login page");

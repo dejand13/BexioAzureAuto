@@ -21,8 +21,7 @@ public class ContactListEmptyTest extends DriverInit {
         Selectors noContacts = new Selectors(driver);
 
         LoginTest login = new LoginTest();
-//        login.loginCredentials(prop.getProperty("noContactsCompany"),"allow");
-        login.loginCredentials(("#{noContactsCompany}#"),"allow");
+        login.loginCredentials(noContactsCompany,"allow");
         noContacts.manageContacts.click();
         log.info("User is redirected in manage contacts scene");
         wait.until(ExpectedConditions.visibilityOf(noContacts.contactListEmpty));
@@ -34,8 +33,6 @@ public class ContactListEmptyTest extends DriverInit {
         noContacts.addContactButton.click();
         log.info("Tapping on add contact button");
 
-//        String executionStore = prop.getProperty("store");
-        String executionStore = ("#{store}#");
         if(executionStore.equalsIgnoreCase("android")) {
             noContacts.newPerson.click();
         } else{

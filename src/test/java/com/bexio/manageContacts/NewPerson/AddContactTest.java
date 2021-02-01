@@ -30,9 +30,6 @@ public class AddContactTest extends LoginTest {
         Thread.sleep(2000L);
 
         TouchAction touch = new TouchAction(driver);
-
-        String executionStore = prop.getProperty("store");
-//        String executionStore = ("#{store}#");
         if(newPerson) {
             if (executionStore.equalsIgnoreCase("android")) {
                 addContact.newPerson.click();
@@ -96,5 +93,15 @@ public class AddContactTest extends LoginTest {
 
         TouchAction touch = new TouchAction(driver);
         touch.tap(PointOption.point(x,y)).perform();
+    }
+    public void newPersonCompanyDialog() {
+        Selectors addContact = new Selectors(driver);
+        if (executionStore.equalsIgnoreCase("android")) {
+            addContact.newPerson.click();
+        } else {
+            AddContactTest addNewPerson = new AddContactTest();
+            addNewPerson.newPersonCompanyCoordinates(0.65, 0.45);
+//        touch.tap(PointOption.point(300,420)).perform();
+        }
     }
 }
