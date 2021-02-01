@@ -15,6 +15,7 @@ import org.testng.annotations.BeforeTest;
 
 public class LoginTest extends DriverInit {
     public static Logger log = LogManager.getLogger(LoginTest.class.getName());
+    public static WebDriverWait wait;
 
     @BeforeTest
     public void loginTest() throws Exception {
@@ -22,7 +23,7 @@ public class LoginTest extends DriverInit {
         loginCredentials(companyName,"allow");
     }
     public void loginCredentials(String comName, String access) throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver,10);
+        wait = new WebDriverWait(driver,10);
 //        Fulfilling the text boxes and logging in
         Selectors loginPage = new Selectors(driver);
         try {

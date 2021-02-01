@@ -365,6 +365,10 @@ public class Selectors {
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF00D']")
     public WebElement manageContactsXButton;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Edit Contact, Edit Contact First Name']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF007 Edit Contact, Edit Contact First Name EditContact@edit.com']")
+    public WebElement noConnToastMessageContact;
+
     //    Edit Contact
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF067']")
     @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name=\"\uF304\"])[2]")

@@ -4,7 +4,6 @@ import com.bexio.init.Selectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,8 +12,6 @@ public class RecommendInvalidAlreadySentGPTest extends LoginTest {
 
     @Test
     public void recommendBexioInvalidAlreadySent() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver,10);
-
         Selectors recommend = new Selectors(driver);
         recommend.recommendBexio.click();
         log.info("Tapping on Recommend Bexio button");

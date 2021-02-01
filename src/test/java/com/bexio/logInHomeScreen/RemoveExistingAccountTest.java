@@ -4,7 +4,6 @@ import com.bexio.init.Selectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,7 +12,6 @@ public class RemoveExistingAccountTest extends LoginTest {
 
     @Test
     public void removeExistingAccout() throws Exception {
-        WebDriverWait wait = new WebDriverWait(driver,10);
         Selectors removeAccount = new Selectors(driver);
         SwitchCompanyTest removeTest = new SwitchCompanyTest();
         removeTest.addNewCompany(secondCompanyName);

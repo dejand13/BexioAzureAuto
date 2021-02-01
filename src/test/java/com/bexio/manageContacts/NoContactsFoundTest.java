@@ -7,7 +7,6 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,10 +15,7 @@ public class NoContactsFoundTest extends LoginTest {
 
     @Test
     public void noContactsFound() {
-        WebDriverWait wait = new WebDriverWait(driver,10);
-
         Selectors searchContact = new Selectors(driver);
-
         String randomString = RandomStringUtils.randomAlphabetic(12);
         searchContact.manageContacts.click();
         log.info("Navigating in Manage Contacts scene");

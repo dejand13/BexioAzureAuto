@@ -5,7 +5,6 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,7 +15,6 @@ public class RecommendationSentGPTest extends LoginTest {
     public void recommendationSent() throws InterruptedException {
         String randomString = RandomStringUtils.randomAlphabetic(8);
         String randomDomain = RandomStringUtils.randomAlphabetic(8);
-        WebDriverWait wait = new WebDriverWait(driver,10);
 
         Selectors recommend = new Selectors(driver);
         recommend.recommendBexio.click();
