@@ -59,7 +59,7 @@
     </test>
     <test name="No Connection Toast Message - My Bexio Add Account">
         <classes>
-            <class name="com.bexio.logInHomeScreen.NoConnToastMessageMyBexioAddTest"/>
+            <class name="com.bexio.noConnection.NoConnToastMessageMyBexioAddTest"/>
         </classes>
     </test>
 
@@ -139,7 +139,12 @@
     </test>
     <test name="No Connection Toast Message Add New Contact">
         <classes>
-            <class name="com.bexio.manageContacts.NoConnToastMessageAddNewContact"/>
+            <class name="com.bexio.noConnection.NoConnToastMessageAddNewContact"/>
+        </classes>
+    </test>
+    <test name="No Connection Toast Message Edit Contact">
+        <classes>
+            <class name="com.bexio.noConnection.NoConnToastMessageEditContactTest"/>
         </classes>
     </test>
 </suite>

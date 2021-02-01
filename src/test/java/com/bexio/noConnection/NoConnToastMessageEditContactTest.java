@@ -1,8 +1,7 @@
-package com.bexio.manageContacts;
+package com.bexio.noConnection;
 
 import com.bexio.init.Selectors;
 import com.bexio.logInHomeScreen.LoginTest;
-import com.bexio.logInHomeScreen.NoConnToastMessageMyBexioAddTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;

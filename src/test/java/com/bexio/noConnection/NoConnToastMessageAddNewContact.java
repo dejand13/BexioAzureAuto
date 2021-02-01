@@ -1,8 +1,7 @@
-package com.bexio.manageContacts;
+package com.bexio.noConnection;
 
 import com.bexio.init.Selectors;
 import com.bexio.logInHomeScreen.LoginTest;
-import com.bexio.logInHomeScreen.NoConnToastMessageMyBexioAddTest;
 import com.bexio.manageContacts.NewPerson.AddContactTest;
 import io.appium.java_client.TouchAction;
 import org.apache.logging.log4j.LogManager;

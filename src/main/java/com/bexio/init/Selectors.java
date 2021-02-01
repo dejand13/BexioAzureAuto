@@ -482,31 +482,32 @@ public class Selectors {
     @iOSXCUITFindBy(accessibility = "Stopwatch, tab, 1 of 3")
     public WebElement stopwatch;
 
+    @AndroidFindBy(xpath = "//android.widget.EditText[@text='Add description']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeTextField[@value='Add description']")
     public WebElement addDescriptionTrackTime;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='More']")
     @iOSXCUITFindBy(accessibility ="More \uF0D7")
     public WebElement moreTrackTime;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Less']")
     @iOSXCUITFindBy(accessibility = "Less \uF0D8")
     public WebElement lessTrackTime;
 
+    @AndroidFindBy(xpath = "//android.view.ViewGroup[@index='4']/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='Entry can be invoiced']/XCUIElementTypeOther")
     public WebElement toggleButtonTrueTrackTime;
 
-//    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name='Contact Choose \uF0D7']/XCUIElementTypeOther)")
+
     @iOSXCUITFindBy(accessibility = "Contact Choose \uF0D7")
     public WebElement contactTrackTime;
 
-//    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name='Activity * Administration \uF0D7']/XCUIElementTypeOther)")
     @iOSXCUITFindBy(accessibility = "Activity * Administration \uF0D7")
     public WebElement activityTrackTime;
 
-//    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name='Project Choose \uF0D7']]/XCUIElementTypeOther)")
     @iOSXCUITFindBy(accessibility = "Project Choose \uF0D7")
     public WebElement projectTrackTime;
 
-//    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name='Work package Choose \uF0D7']/XCUIElementTypeOther)")
     @iOSXCUITFindBy(accessibility = "Work package Choose \uF0D7")
     public WebElement workPackageTrackTime;
 
@@ -519,18 +520,27 @@ public class Selectors {
     @iOSXCUITFindBy(accessibility = "From-To")
     public WebElement FromToLogTime;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF04B']")
+    public WebElement playButtonTackTime;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF04C']")
+    public WebElement pauseButtonTrackTime;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Save']")
     @iOSXCUITFindBy(accessibility = "Save")
     public WebElement saveButtonTrackTime;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Clear']")
     @iOSXCUITFindBy(accessibility = "Clear")
     public WebElement clearButtonTrackTime;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Cancel']")
     @iOSXCUITFindBy(accessibility = "Cancel")
     public WebElement cancelWheelPicker;
 
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF1F8']")
     @iOSXCUITFindBy(accessibility = "Remove")
     public WebElement removeOverviewTrackTime;
-
 
     @iOSXCUITFindBy(accessibility = "Overview, tab, 3 of 3")
     public WebElement overview;
