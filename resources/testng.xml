@@ -57,11 +57,6 @@
             <class name="com.bexio.logInHomeScreen.CompanyAlreadyAddedTest"/>
         </classes>
     </test>
-    <test name="No Connection Toast Message - My Bexio Add Account">
-        <classes>
-            <class name="com.bexio.noConnection.NoConnToastMessageMyBexioAddTest"/>
-        </classes>
-    </test>
 
 <!--    Manage Contacts-->
 <!--    NewPerson-->
@@ -137,14 +132,42 @@
             <class name="com.bexio.manageContacts.NoContactsFoundTest"/>
         </classes>
     </test>
+
+<!--    No Internet Connection Toast Message-->
+
     <test name="No Connection Toast Message Add New Contact">
         <classes>
             <class name="com.bexio.noConnection.NoConnToastMessageAddNewContact"/>
         </classes>
     </test>
+    <test name="No Connection Toast Message Duration">
+        <classes>
+            <class name="com.bexio.noConnection.NoConnToastMessageDurationSaveTest"/>
+        </classes>
+    </test>
     <test name="No Connection Toast Message Edit Contact">
         <classes>
             <class name="com.bexio.noConnection.NoConnToastMessageEditContactTest"/>
+        </classes>
+    </test>
+    <test name="No Connection Toast Message From-To">
+        <classes>
+            <class name="com.bexio.noConnection.NoConnToastMessageFromToSaveTest"/>
+        </classes>
+    </test>
+    <test name="No Connection Toast Message My Bexio Add Account">
+        <classes>
+            <class name="com.bexio.noConnection.NoConnToastMessageMyBexioAddTest"/>
+        </classes>
+    </test>
+    <test name="No Connection Toast Message My Bexio Remove Account">
+        <classes>
+            <class name="com.bexio.noConnection.NoConnToastMessageRemoveAccTest"/>
+        </classes>
+    </test>
+    <test name="No Connection Toast Message Stopwatch">
+        <classes>
+            <class name="com.bexio.noConnection.NoConnToastMessageStopwatchSaveTest"/>
         </classes>
     </test>
 </suite>

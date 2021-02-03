@@ -50,8 +50,8 @@ public class DefaultCountryNewPersonTest extends LoginTest {
             log.info("Adding the mandatory 'Company Name' field");
         }
 
-        scrollPointOption(0.6,0.1);
-        scrollPointOption(0.4,0.1);
+        scrollPointOption(0.5,0.6,0.1);
+        scrollPointOption(0.5,0.4,0.1);
         log.info("Scrolling down until country field is visible");
 
         wait.until(ExpectedConditions.visibilityOf(defaultCountry.defaultCountrySwiss));

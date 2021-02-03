@@ -56,7 +56,7 @@ public class LoginTest extends DriverInit {
 
             try{
                 loginPage.viewEditContacts.isDisplayed();
-                scrollPointOption(0.6,0.1);
+                scrollPointOption(0.5,0.6,0.1);
 //                touch.longPress(PointOption.point(x,startScroll)).moveTo(PointOption.point(x,endScroll)).release().perform();
                 Thread.sleep(2000L);
                 if(access.contains("differentCompany")) {
@@ -76,11 +76,11 @@ public class LoginTest extends DriverInit {
             }
     }
 
-    public void scrollPointOption(double startPositionPercentage, double endPositionPercentage){
+    public void scrollPointOption(double xAxisPositionPercentage,double yAxisStartPositionPercentage, double yAxisEndPositionPercentage){
         Dimension scrollDown = driver.manage().window().getSize();
-        int scroll = scrollDown.getWidth()/2;
-        int startScroll = (int) (scrollDown.getHeight()*startPositionPercentage);
-        int endScroll = (int) (scrollDown.getHeight()*endPositionPercentage);
+        int scroll =(int) (scrollDown.getWidth() * xAxisPositionPercentage);
+        int startScroll = (int) (scrollDown.getHeight() * yAxisStartPositionPercentage);
+        int endScroll = (int) (scrollDown.getHeight() * yAxisEndPositionPercentage);
 
         TouchAction touch = new TouchAction(driver);
         touch.longPress(PointOption.point(scroll,startScroll)).moveTo(PointOption.point(scroll,endScroll)).release().perform();
