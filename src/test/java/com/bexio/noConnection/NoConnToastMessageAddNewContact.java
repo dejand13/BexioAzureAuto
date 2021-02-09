@@ -1,33 +1,28 @@
 package com.bexio.noConnection;
 
-import com.bexio.init.Selectors;
-import com.bexio.logInHomeScreen.LoginTest;
-import com.bexio.manageContacts.NewPerson.AddContactTest;
-import io.appium.java_client.TouchAction;
+import com.bexio.logIn.Methods_LogIn;
+import com.bexio.tapOnCoordinate.Methods_TapOnCoordinate;
+import com.bexio.logIn.LogIn_Selectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class NoConnToastMessageAddNewContact extends LoginTest {
+public class NoConnToastMessageAddNewContact extends Methods_LogIn {
     public static Logger log = LogManager.getLogger(NoConnToastMessageAddNewContact.class.getName());
 
     @Test
     public void noConnToastAddNewContact() throws InterruptedException {
-        Selectors noConnection = new Selectors(driver);
-        TouchAction touch = new TouchAction(driver);
+        LogIn_Selectors noConnection = new LogIn_Selectors(driver);
+        Methods_TapOnCoordinate connectionControler = new Methods_TapOnCoordinate();
 
         noConnection.manageContacts.click();
         log.info("Navigating in Manage Contacts scene");
         noConnection.addContactButton.click();
         log.info("Tapping on add new contact button");
         Thread.sleep(2000L);
-
-        AddContactTest newPersonDialog = new AddContactTest();
-        newPersonDialog.newPersonCompanyDialog();
-
-        NoConnToastMessageMyBexioAddTest connectionControler = new NoConnToastMessageMyBexioAddTest();
+        connectionControler.createNewPersonOrCompanyDialog(0.65,0.45);
         connectionControler.disableInternetConnection();
         noConnection.lastName.sendKeys("Last name");
         noConnection.addContactSaveButton.click();
@@ -41,5 +36,4 @@ public class NoConnToastMessageAddNewContact extends LoginTest {
         noConnection.backButtonContactDetailView.click();
         noConnection.homeButton.click();
     }
-
 }

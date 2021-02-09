@@ -1,9 +1,10 @@
 package com.bexio.manageContacts;
 
 import com.bexio.init.DriverInit;
-import com.bexio.init.Selectors;
-import com.bexio.logInHomeScreen.LoginTest;
+import com.bexio.logIn.LogIn_Selectors;
+import com.bexio.logIn.Methods_LogIn;
 import com.bexio.manageContacts.NewPerson.AddContactTest;
+import com.bexio.tapOnCoordinate.Methods_TapOnCoordinate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,27 +19,21 @@ public class ContactListEmptyTest extends DriverInit {
     public void contactListEmpty() throws Exception {
         initDriver();
         WebDriverWait wait = new WebDriverWait(driver,10);
-        Selectors noContacts = new Selectors(driver);
+        LogIn_Selectors noContacts = new LogIn_Selectors(driver);
+        Methods_LogIn login = new Methods_LogIn();
+        Methods_TapOnCoordinate tapOnCoordinate = new Methods_TapOnCoordinate();
 
-        LoginTest login = new LoginTest();
         login.loginCredentials(noContactsCompany,"allow");
         noContacts.manageContacts.click();
         log.info("User is redirected in manage contacts scene");
         wait.until(ExpectedConditions.visibilityOf(noContacts.contactListEmpty));
         Assert.assertTrue(noContacts.addContactButton.isDisplayed());
         Assert.assertTrue(noContacts.homeButton.isDisplayed());
-
         Assert.assertTrue(noContacts.contactListEmpty.isDisplayed());
         log.info("Contact list empty special screen is displayed");
         noContacts.addContactButton.click();
         log.info("Tapping on add contact button");
-
-        if(executionStore.equalsIgnoreCase("android")) {
-            noContacts.newPerson.click();
-        } else{
-            AddContactTest newPerson = new AddContactTest();
-            newPerson.newPersonCompanyCoordinates(0.65,0.45);
-        }
+        tapOnCoordinate.createNewPersonOrCompanyDialog(0.65,0.45);
         log.info("Tapping on \"New person\" button");
         Assert.assertTrue(noContacts.lastName.isDisplayed());
         log.info("Add contact screen is displayed");

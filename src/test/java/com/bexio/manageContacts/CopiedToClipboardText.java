@@ -1,7 +1,7 @@
 package com.bexio.manageContacts;
 
-import com.bexio.init.Selectors;
-import com.bexio.logInHomeScreen.LoginTest;
+import com.bexio.logIn.LogIn_Selectors;
+import com.bexio.logIn.Methods_LogIn;
 import com.bexio.manageContacts.NewCompany.SearchContactCompanyTest;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.LongPressOptions;
@@ -13,12 +13,12 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class CopiedToClipboardText extends LoginTest {
+public class CopiedToClipboardText extends Methods_LogIn {
     public static Logger log = LogManager.getLogger(SearchContactCompanyTest.class.getName());
 
     @Test
     public void copiedToClipboard() throws InterruptedException {
-        Selectors copiedToClipboard = new Selectors(driver);
+        LogIn_Selectors copiedToClipboard = new LogIn_Selectors(driver);
         copiedToClipboard.manageContacts.click();
         log.info("Navigating in Manage Contacts scene");
 

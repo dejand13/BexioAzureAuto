@@ -1,18 +1,19 @@
 package com.bexio.logInHomeScreen;
 
-import com.bexio.init.Selectors;
+import com.bexio.logIn.LogIn_Selectors;
+import com.bexio.logIn.Methods_LogIn;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RecommendInvalidAlreadySentGPTest extends LoginTest {
+public class RecommendInvalidAlreadySentGPTest extends Methods_LogIn {
     public static Logger log = LogManager.getLogger(RecommendInvalidAlreadySentGPTest.class.getName());
 
     @Test
     public void recommendBexioInvalidAlreadySent() throws InterruptedException {
-        Selectors recommend = new Selectors(driver);
+        LogIn_Selectors recommend = new LogIn_Selectors(driver);
         recommend.recommendBexio.click();
         log.info("Tapping on Recommend Bexio button");
         recommend.recommendEmailAddress.sendKeys("invalid");

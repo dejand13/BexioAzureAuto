@@ -1,7 +1,7 @@
 package com.bexio.logInHomeScreen;
 
 import com.bexio.init.DriverInit;
-import com.bexio.init.Selectors;
+import com.bexio.logIn.LogIn_Selectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
@@ -13,7 +13,7 @@ public class ForgotPassTest extends DriverInit {
     @Test
     public void forgotPass() throws IOException, InterruptedException {
         initDriver();
-        Selectors forgotPass = new Selectors(driver);
+        LogIn_Selectors forgotPass = new LogIn_Selectors(driver);
         try {
             forgotPass.allowNotificationDialog.isDisplayed();
             driver.switchTo().alert().accept();

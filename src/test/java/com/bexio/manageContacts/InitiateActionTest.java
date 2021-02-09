@@ -1,7 +1,7 @@
 package com.bexio.manageContacts;
 
-import com.bexio.init.Selectors;
-import com.bexio.logInHomeScreen.LoginTest;
+import com.bexio.logIn.LogIn_Selectors;
+import com.bexio.logIn.Methods_LogIn;
 import com.bexio.manageContacts.NewCompany.SearchContactCompanyTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,12 +10,12 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 
-public class InitiateActionTest extends LoginTest {
+public class InitiateActionTest extends Methods_LogIn {
     public static Logger log = LogManager.getLogger(SearchContactCompanyTest.class.getName());
 
     @Test
     public void initiateAction() throws MalformedURLException, InterruptedException {
-        Selectors initiateAction = new Selectors(driver);
+        LogIn_Selectors initiateAction = new LogIn_Selectors(driver);
         initiateAction.manageContacts.click();
         log.info("Navigating in Manage Contacts scene");
 

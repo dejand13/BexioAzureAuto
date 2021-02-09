@@ -1,18 +1,18 @@
 package com.bexio.manageContacts.NewPerson;
 
-import com.bexio.init.Selectors;
-import com.bexio.logInHomeScreen.LoginTest;
+import com.bexio.logIn.LogIn_Selectors;
+import com.bexio.logIn.Methods_LogIn;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SearchContactPersonTest extends LoginTest {
+public class SearchContactPersonTest extends Methods_LogIn {
     public static Logger log = LogManager.getLogger(SearchContactPersonTest.class.getName());
 
     @Test
     public void searchContactPerson() {
-        Selectors searchContact = new Selectors(driver);
+        LogIn_Selectors searchContact = new LogIn_Selectors(driver);
         searchContact.manageContacts.click();
         log.info("Navigating in Manage Contacts scene");
 

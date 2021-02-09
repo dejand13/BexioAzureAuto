@@ -58,8 +58,8 @@
         </classes>
     </test>
 
-<!--    Manage Contacts-->
-<!--    NewPerson-->
+<!--    Manage Contacts   -->
+<!--    NewPerson   -->
 
     <test name="Add Contact">
         <classes>
@@ -133,7 +133,7 @@
         </classes>
     </test>
 
-<!--    No Internet Connection Toast Message-->
+<!--    No Internet Connection Toast Message   -->
 
     <test name="No Connection Toast Message Add New Contact">
         <classes>
@@ -168,6 +168,13 @@
     <test name="No Connection Toast Message Stopwatch">
         <classes>
             <class name="com.bexio.noConnection.NoConnToastMessageStopwatchSaveTest"/>
+        </classes>
+    </test>
+
+    <!--    NewPerson   -->
+    <test name="Stopwatch Tracking Saved">
+        <classes>
+            <class name="com.bexio.trackTime.StopwatchTrackingSavedTest"/>
         </classes>
     </test>
 </suite>

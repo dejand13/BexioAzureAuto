@@ -1,7 +1,8 @@
 package com.bexio.logInHomeScreen;
 
 import com.bexio.init.DriverInit;
-import com.bexio.init.Selectors;
+import com.bexio.logIn.LogIn_Selectors;
+import com.bexio.logIn.Methods_LogIn;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,14 +16,13 @@ public class CompanyAlreadyAddedTest extends DriverInit {
     @Test
     public void companyAlreadyAdded() throws Exception {
         initDriver();
-        Selectors companyAlreadyAdded = new Selectors(driver);
         WebDriverWait wait = new WebDriverWait(driver,10);
-        LoginTest login = new LoginTest();
-        login.loginCredentials(secondCompanyName,"allow");
-
+        LogIn_Selectors companyAlreadyAdded = new LogIn_Selectors(driver);
+        Methods_LogIn login = new Methods_LogIn();
         SwitchCompanyTest addCompany = new SwitchCompanyTest();
-        addCompany.addNewCompany(companyName);
 
+        login.loginCredentials(secondCompanyName,"allow");
+        addCompany.addNewCompany(companyName);
         addCompany.addNewCompany(secondCompanyName);
         wait.until(ExpectedConditions.visibilityOf(companyAlreadyAdded.companyAddedToastMessage));
         Assert.assertTrue(companyAlreadyAdded.companyAddedToastMessage.isDisplayed());

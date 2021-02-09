@@ -1,21 +1,23 @@
 package com.bexio.logInHomeScreen;
 
-import com.bexio.init.Selectors;
+import com.bexio.logIn.LogIn_Selectors;
+import com.bexio.logIn.Methods_LogIn;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RemoveExistingAccountTest extends LoginTest {
+public class RemoveExistingAccountTest extends Methods_LogIn {
     public static Logger log = LogManager.getLogger(RemoveExistingAccountTest.class.getName());
 
     @Test
     public void removeExistingAccout() throws Exception {
-        Selectors removeAccount = new Selectors(driver);
+        LogIn_Selectors removeAccount = new LogIn_Selectors(driver);
         SwitchCompanyTest removeTest = new SwitchCompanyTest();
-        removeTest.addNewCompany(secondCompanyName);
+        Methods_LogIn login = new Methods_LogIn();
 
+        removeTest.addNewCompany(secondCompanyName);
         Thread.sleep(3000L);
         wait.until(ExpectedConditions.visibilityOf(removeAccount.myBexioAccounts));
         removeAccount.myBexioAccounts.click();
@@ -34,7 +36,6 @@ public class RemoveExistingAccountTest extends LoginTest {
         Assert.assertTrue(removeAccount.logginButton.isDisplayed());
         log.info("Verifying that login form has been displayed");
 
-        loginCredentials(secondCompanyName,"allow");
-//        loginCredentials(("#{secondCompanyName}#"),"allow");
+        login.loginCredentials(secondCompanyName,"allow");
     }
 }

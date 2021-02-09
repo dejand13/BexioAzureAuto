@@ -1,7 +1,8 @@
 package com.bexio.manageContacts.NewPerson;
 
-import com.bexio.init.Selectors;
-import com.bexio.logInHomeScreen.LoginTest;
+import com.bexio.logIn.LogIn_Selectors;
+import com.bexio.logIn.Methods_LogIn;
+import com.bexio.tapOnCoordinate.Methods_TapOnCoordinate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LastNameValidationTest extends LoginTest {
+public class LastNameValidationTest extends Methods_LogIn {
     public static Logger log = LogManager.getLogger(LastNameValidationTest.class.getName());
 
     @Test
@@ -19,8 +20,8 @@ public class LastNameValidationTest extends LoginTest {
 
     public void lastNameValidation(boolean newPerson) throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver,10);
-
-        Selectors validation = new Selectors(driver);
+        LogIn_Selectors validation = new LogIn_Selectors(driver);
+        Methods_TapOnCoordinate tapOnCoordinate = new Methods_TapOnCoordinate();
 
         validation.manageContacts.click();
         log.info("Navigating in Manage Contacts scene");
@@ -29,12 +30,7 @@ public class LastNameValidationTest extends LoginTest {
         Thread.sleep(2000L);
 
         if(newPerson) {
-            if (executionStore.equalsIgnoreCase("android")) {
-                validation.newPerson.click();
-            } else {
-                AddContactTest addNewPerson = new AddContactTest();
-                addNewPerson.newPersonCompanyCoordinates(0.65, 0.45);
-            }
+            tapOnCoordinate.createNewPersonOrCompanyDialog(0.65,0.45);
             log.info("Tapping on \"New person\" button");
 
             validation.firstName.sendKeys("First name");
@@ -46,12 +42,7 @@ public class LastNameValidationTest extends LoginTest {
             validation.lastName.sendKeys("Last name");
             log.info("Adding last name");
         } else {
-            if (executionStore.equalsIgnoreCase("android")) {
-                validation.newCompany.click();
-            } else {
-                AddContactTest addNewCompany = new AddContactTest();
-                addNewCompany.newPersonCompanyCoordinates(0.65, 0.52);
-            }
+            tapOnCoordinate.createNewPersonOrCompanyDialog(0.65,0.52);
             log.info("Tapping on \"New company\" button");
 
             validation.nameSuffix.sendKeys("Name suffix");

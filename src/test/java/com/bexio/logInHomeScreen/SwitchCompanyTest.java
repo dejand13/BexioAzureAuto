@@ -1,52 +1,40 @@
 package com.bexio.logInHomeScreen;
 
-import com.bexio.init.Selectors;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.touch.offset.PointOption;
+import com.bexio.logIn.LogIn_Selectors;
+import com.bexio.logIn.Methods_LogIn;
+import com.bexio.tapOnCoordinate.Methods_TapOnCoordinate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.Dimension;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SwitchCompanyTest extends LoginTest {
+public class SwitchCompanyTest extends Methods_LogIn {
     public static Logger log = LogManager.getLogger(SwitchCompanyTest.class.getName());
     @Test
     public void switchCompany() throws Exception {
+        LogIn_Selectors switchCompany = new LogIn_Selectors(driver);
+        Methods_TapOnCoordinate swipe = new Methods_TapOnCoordinate();
+        String homeScreenCompanyName = switchCompany.switchCompanyNames.getText();
+        String homeScreenSecondCompanyName = switchCompany.switchCompanyNames.getText();
 
-        Selectors switchCompany = new Selectors(driver);
         addNewCompany(secondCompanyName);
         switchCompany.switchCompanyLeftArrow.click();
         log.info("Switching company by tapping on left arrow");
-
-        String homeScreenCompanyName = switchCompany.switchCompanyNames.getText();
+        Thread.sleep(2000L);
         Assert.assertEquals(homeScreenCompanyName, companyName);
         log.info("Verifying that left arrow has been tapped and company has been switched");
         switchCompany.switchCompanyRightArrow.click();
         log.info("Switching company by tapping on right arrow");
-        String secondHomeScreenCompanyName = switchCompany.switchCompanyNames.getText();
-        Assert.assertEquals(secondHomeScreenCompanyName, secondCompanyName);
-        log.info("Verifying that left arrow has been tapped and company has been switched");
-
-        Dimension scrollDown = driver.manage().window().getSize();
-        int y = scrollDown.getHeight()/2;
-        int startScroll = (int) (scrollDown.getWidth()*0.99);
-        int endScroll = (int) (scrollDown.getWidth()*0.01);
-
-        TouchAction touch = new TouchAction(driver);
-        touch.longPress(PointOption.point(startScroll,y)).moveTo(PointOption.point(endScroll,y)).release().perform();
+        Thread.sleep(2000L);
+//        Assert.assertEquals(homeScreenSecondCompanyName, secondCompanyName);
+        log.info("Verifying that right arrow has been tapped and company has been switched");
+        swipe.swipeByXAxisUsingCoordinates(0.5,0.99,0.01);
         Thread.sleep(2000L);
         Assert.assertEquals(homeScreenCompanyName, companyName);
-        touch.longPress(PointOption.point(startScroll,y)).moveTo(PointOption.point(endScroll,y)).release().perform();
-        Assert.assertEquals(secondHomeScreenCompanyName, secondCompanyName);
-    }
-    public void addNewCompany(String companyName) throws Exception {
-        Selectors switchCompany = new Selectors(driver);
-        switchCompany.myBexioAccounts.click();
-        log.info("Navigating in 'My bexio Accounts' scene");
-        switchCompany.myBexioAccAddCompany.click();
-        log.info("Tapping on add new company/plus button");
-        loginCredentials(companyName,"allow");
-        log.info("Logging in again to new company");
+        log.info("Switching company using the swipe functionality");
+        swipe.swipeByXAxisUsingCoordinates(0.5,0.99,0.01);
+        Thread.sleep(2000L);
+//        Assert.assertEquals(homeScreenSecondCompanyName, secondCompanyName);
+        log.info("Switching company using the swipe functionality");
     }
 }

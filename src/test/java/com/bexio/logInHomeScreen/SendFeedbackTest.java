@@ -1,17 +1,18 @@
 package com.bexio.logInHomeScreen;
 
-import com.bexio.init.Selectors;
+import com.bexio.logIn.LogIn_Selectors;
+import com.bexio.logIn.Methods_LogIn;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SendFeedbackTest extends LoginTest {
+public class SendFeedbackTest extends Methods_LogIn {
     public static Logger log = LogManager.getLogger(SendFeedbackTest.class.getName());
 
     @Test
     public void sendFeedback() throws InterruptedException {
-        Selectors sendFeedback = new Selectors(driver);
+        LogIn_Selectors sendFeedback = new LogIn_Selectors(driver);
         Assert.assertTrue(sendFeedback.sendFeedback.isDisplayed());
         log.info("Verifying that Send Feedback button is displayed on the screen");
         sendFeedback.sendFeedback.click();
