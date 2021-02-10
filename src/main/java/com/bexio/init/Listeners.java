@@ -1,11 +1,14 @@
 package com.bexio.init;
 
-import com.bexio.init.DriverInit;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.IRetryAnalyzer;
 
-public class Listeners extends DriverInit implements ITestListener {
+public class Listeners extends DriverInit implements ITestListener, IRetryAnalyzer {
+    private int retryCnt = 0;
+    private int maxRetryCnt = 1;
+
     @Override
     public void onTestStart(ITestResult iTestResult) {
 
@@ -44,5 +47,15 @@ public class Listeners extends DriverInit implements ITestListener {
     @Override
     public void onFinish(ITestContext iTestContext) {
 
+    }
+
+    @Override
+    public boolean retry(ITestResult iTestResult) {
+        if (retryCnt < maxRetryCnt) {
+            System.out.println("Retrying " + iTestResult.getName() + " again and the count is " + (retryCnt+1));
+            retryCnt++;
+            return true;
+        }
+        return false;
     }
 }
