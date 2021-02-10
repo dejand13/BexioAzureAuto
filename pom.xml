@@ -17,7 +17,7 @@
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>resources/testng.xml</suiteXmlFile>
-                        <suiteXmlFile>testng-failed.xml</suiteXmlFile>
+<!--                        <suiteXmlFile>test-output/testng-failed.xml</suiteXmlFile>-->
                     </suiteXmlFiles>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
