@@ -23,159 +23,159 @@
             <class name="com.bexio.logInHomeScreen.RecommendationSentGPTest"/>
         </classes>
     </test>
-<!--    <test name="Recommend Bexio-Invalid email address/Already sent recommendation to the entered email address">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.logInHomeScreen.RecommendInvalidAlreadySentGPTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Remove Existing Accounts">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.logInHomeScreen.RemoveExistingAccountTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Scenes Verification">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.logInHomeScreen.SceneVerificationTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Send Feedback">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.logInHomeScreen.SendFeedbackTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Select Different Company">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.logInHomeScreen.SelectDifferentCompanyTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Switch Company">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.logInHomeScreen.SwitchCompanyTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Company Already Added">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.logInHomeScreen.CompanyAlreadyAddedTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Recommend Bexio-Invalid email address/Already sent recommendation to the entered email address">
+    <classes>
+        <class name="com.bexio.logInHomeScreen.RecommendInvalidAlreadySentGPTest"/>
+    </classes>
+</test>
+    <test name="Remove Existing Accounts">
+        <classes>
+            <class name="com.bexio.logInHomeScreen.RemoveExistingAccountTest"/>
+        </classes>
+    </test>
+    <test name="Scenes Verification">
+        <classes>
+            <class name="com.bexio.logInHomeScreen.SceneVerificationTest"/>
+        </classes>
+    </test>
+    <test name="Send Feedback">
+        <classes>
+            <class name="com.bexio.logInHomeScreen.SendFeedbackTest"/>
+        </classes>
+    </test>
+    <test name="Select Different Company">
+        <classes>
+            <class name="com.bexio.logInHomeScreen.SelectDifferentCompanyTest"/>
+        </classes>
+    </test>
+    <test name="Switch Company">
+        <classes>
+            <class name="com.bexio.logInHomeScreen.SwitchCompanyTest"/>
+        </classes>
+    </test>
+    <test name="Company Already Added">
+        <classes>
+            <class name="com.bexio.logInHomeScreen.CompanyAlreadyAddedTest"/>
+        </classes>
+    </test>
 
-<!--&lt;!&ndash;    Manage Contacts   &ndash;&gt;-->
-<!--&lt;!&ndash;    NewPerson   &ndash;&gt;-->
+    <!--    Manage Contacts   -->
+    <!--    NewPerson   -->
 
-<!--    <test name="Add Contact">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.manageContacts.NewPerson.AddContactTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Default Country New Person">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.manageContacts.NewPerson.DefaultCountryNewPersonTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Email Validation">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.manageContacts.NewPerson.EmailValidationNewPersonTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Last Name Validation">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.manageContacts.NewPerson.LastNameValidationTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Search Contact Person">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.manageContacts.NewPerson.SearchContactPersonTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Add Contact">
+        <classes>
+            <class name="com.bexio.manageContacts.NewPerson.AddContactTest"/>
+        </classes>
+    </test>
+    <test name="Default Country New Person">
+        <classes>
+            <class name="com.bexio.manageContacts.NewPerson.DefaultCountryNewPersonTest"/>
+        </classes>
+    </test>
+    <test name="Email Validation">
+        <classes>
+            <class name="com.bexio.manageContacts.NewPerson.EmailValidationNewPersonTest"/>
+        </classes>
+    </test>
+    <test name="Last Name Validation">
+        <classes>
+            <class name="com.bexio.manageContacts.NewPerson.LastNameValidationTest"/>
+        </classes>
+    </test>
+    <test name="Search Contact Person">
+        <classes>
+            <class name="com.bexio.manageContacts.NewPerson.SearchContactPersonTest"/>
+        </classes>
+    </test>
 
-<!--&lt;!&ndash;    New Company&ndash;&gt;-->
+    <!--    New Company-->
 
-<!--    <test name="Company Name Validation">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.manageContacts.NewCompany.CompanyNameValidationTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Default Country New Company">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.manageContacts.NewCompany.DefaultCountryNewCompanyTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Email Validation New Company">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.manageContacts.NewCompany.EmailValidationNewCompanyTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Search Contact Company">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.manageContacts.NewCompany.SearchContactCompanyTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Company Name Validation">
+        <classes>
+            <class name="com.bexio.manageContacts.NewCompany.CompanyNameValidationTest"/>
+        </classes>
+    </test>
+    <test name="Default Country New Company">
+        <classes>
+            <class name="com.bexio.manageContacts.NewCompany.DefaultCountryNewCompanyTest"/>
+        </classes>
+    </test>
+    <test name="Email Validation New Company">
+        <classes>
+            <class name="com.bexio.manageContacts.NewCompany.EmailValidationNewCompanyTest"/>
+        </classes>
+    </test>
+    <test name="Search Contact Company">
+        <classes>
+            <class name="com.bexio.manageContacts.NewCompany.SearchContactCompanyTest"/>
+        </classes>
+    </test>
 
-<!--&lt;!&ndash;    Manage Contacts Global&ndash;&gt;-->
+    <!--    Manage Contacts Global-->
 
-<!--    <test name="Contact List Empty">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.manageContacts.ContactListEmptyTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Copied To Clipboard">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.manageContacts.CopiedToClipboardText"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="Initiate Action">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.manageContacts.InitiateActionTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="No Contacts Found">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.manageContacts.NoContactsFoundTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Contact List Empty">
+        <classes>
+            <class name="com.bexio.manageContacts.ContactListEmptyTest"/>
+        </classes>
+    </test>
+    <test name="Copied To Clipboard">
+        <classes>
+            <class name="com.bexio.manageContacts.CopiedToClipboardText"/>
+        </classes>
+    </test>
+    <test name="Initiate Action">
+        <classes>
+            <class name="com.bexio.manageContacts.InitiateActionTest"/>
+        </classes>
+    </test>
+    <test name="No Contacts Found">
+        <classes>
+            <class name="com.bexio.manageContacts.NoContactsFoundTest"/>
+        </classes>
+    </test>
 
-<!--&lt;!&ndash;    No Internet Connection Toast Message   &ndash;&gt;-->
+    <!--    No Internet Connection Toast Message   -->
 
-<!--    <test name="No Connection Toast Message Add New Contact">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.noConnection.NoConnToastMessageAddNewContact"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="No Connection Toast Message Duration">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.noConnection.NoConnToastMessageDurationSaveTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="No Connection Toast Message Edit Contact">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.noConnection.NoConnToastMessageEditContactTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="No Connection Toast Message From-To">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.noConnection.NoConnToastMessageFromToSaveTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="No Connection Toast Message My Bexio Add Account">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.noConnection.NoConnToastMessageMyBexioAddTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="No Connection Toast Message My Bexio Remove Account">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.noConnection.NoConnToastMessageRemoveAccTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-<!--    <test name="No Connection Toast Message Stopwatch">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.noConnection.NoConnToastMessageStopwatchSaveTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="No Connection Toast Message Add New Contact">
+        <classes>
+            <class name="com.bexio.noConnection.NoConnToastMessageAddNewContact"/>
+        </classes>
+    </test>
+    <test name="No Connection Toast Message Duration">
+        <classes>
+            <class name="com.bexio.noConnection.NoConnToastMessageDurationSaveTest"/>
+        </classes>
+    </test>
+    <test name="No Connection Toast Message Edit Contact">
+        <classes>
+            <class name="com.bexio.noConnection.NoConnToastMessageEditContactTest"/>
+        </classes>
+    </test>
+    <test name="No Connection Toast Message From-To">
+        <classes>
+            <class name="com.bexio.noConnection.NoConnToastMessageFromToSaveTest"/>
+        </classes>
+    </test>
+    <test name="No Connection Toast Message My Bexio Add Account">
+        <classes>
+            <class name="com.bexio.noConnection.NoConnToastMessageMyBexioAddTest"/>
+        </classes>
+    </test>
+    <test name="No Connection Toast Message My Bexio Remove Account">
+        <classes>
+            <class name="com.bexio.noConnection.NoConnToastMessageRemoveAccTest"/>
+        </classes>
+    </test>
+    <test name="No Connection Toast Message Stopwatch">
+        <classes>
+            <class name="com.bexio.noConnection.NoConnToastMessageStopwatchSaveTest"/>
+        </classes>
+    </test>
 
-<!--    &lt;!&ndash;    NewPerson   &ndash;&gt;-->
-<!--    <test name="Stopwatch Tracking Saved">-->
-<!--        <classes>-->
-<!--            <class name="com.bexio.trackTime.StopwatchTrackingSavedTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <!--    NewPerson   -->
+    <test name="Stopwatch Tracking Saved">
+        <classes>
+            <class name="com.bexio.trackTime.StopwatchTrackingSavedTest"/>
+        </classes>
+    </test>
 </suite>
