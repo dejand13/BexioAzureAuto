@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="LogIn and Home Screen Tests">
+<suite name="My bexioGo Automation Test Cases">
     <listeners>
         <listener class-name="com.bexio.init.Listeners"/>
     </listeners>

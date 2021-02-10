@@ -38,24 +38,24 @@ public class DriverInit {
         prop.load(data);
 
 // ------------- Data Properties -------------
-        executionStore = prop.getProperty("store");
-        username = prop.getProperty("username");
-        password = prop.getProperty("pass");
-        companyName = prop.getProperty("companyName");
-        secondCompanyName = prop.getProperty("secondCompanyName");
-        invalidEmail = prop.getProperty("invalidEmail");
-        usernameForgot = prop.getProperty("usernameForgot");
-        noContactsCompany = prop.getProperty("noContactsCompany");
+//        executionStore = prop.getProperty("store");
+//        username = prop.getProperty("username");
+//        password = prop.getProperty("pass");
+//        companyName = prop.getProperty("companyName");
+//        secondCompanyName = prop.getProperty("secondCompanyName");
+//        invalidEmail = prop.getProperty("invalidEmail");
+//        usernameForgot = prop.getProperty("usernameForgot");
+//        noContactsCompany = prop.getProperty("noContactsCompany");
 
 // ------------- Azure DevOps variables -------------
-//        executionStore = ("#{store}#");
-//        username = ("#{username}#");
-//        password = ("#{pass}#");
-//        companyName = ("#{companyName}#");
-//        secondCompanyName = ("#{secondCompanyName}#");
-//        invalidEmail = ("invalidEmail");
-//        usernameForgot = ("#{usernameForgot}#");
-//        noContactsCompany = ("#{noContactsCompany}#");
+        executionStore = ("#{store}#");
+        username = ("#{username}#");
+        password = ("#{pass}#");
+        companyName = ("#{companyName}#");
+        secondCompanyName = ("#{secondCompanyName}#");
+        invalidEmail = ("invalidEmail");
+        usernameForgot = ("#{usernameForgot}#");
+        noContactsCompany = ("#{noContactsCompany}#");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         if (executionStore.equalsIgnoreCase("android")) {
