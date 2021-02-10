@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [My bexioGo Automation Test Cases]">
+  <listeners>
+    <listener class-name="com.bexio.init.Listeners"/>
+    <listener class-name="com.bexio.init.RetryListenerClass"/>
+  </listeners>
+  <test thread-count="5" name="Recommend Bexio - Recommendation Sent(failed)">
+    <classes>
+      <class name="com.bexio.logInHomeScreen.RecommendationSentGPTest">
+        <methods>
+          <include name="recommendationSent"/>
+          <include name="loginTest"/>
+          <include name="afterTestMethod"/>
+        </methods>
+      </class> <!-- com.bexio.logInHomeScreen.RecommendationSentGPTest -->
+    </classes>
+  </test> <!-- Recommend Bexio - Recommendation Sent(failed) -->
+</suite> <!-- Failed suite [My bexioGo Automation Test Cases] -->
