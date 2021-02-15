@@ -157,4 +157,28 @@ public class Selectors_TrackTime extends LogIn_Selectors {
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Today']")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name='Today']")
     public MobileElement todayCreatedTrackingOverview;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Stopwatch track time']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF2F2 LastName, FirstName Stopwatch track time 00:00']")
+    public MobileElement verifyStopwatchTrackTimeEntryCreatedInOverview;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Log Time - Duration track time']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF2F2 LastName, FirstName Log Time - Duration track time 02:02']")
+    public MobileElement verifyDurationTrackTimeEntryCreatedInOverview;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Log Time - From-To track time']")
+    @iOSXCUITFindBy(xpath = ("//XCUIElementTypeOther[contains(@name,'\uF07E LastName, FirstName Log Time - From-To track time')]"))
+    public MobileElement verifyFromToTrackTimeEntryCreatedInOverview;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF017']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='00:00 \uF017']")
+    public MobileElement openDurationTimeWheelPicker;
+
+    //Using coordinates for iOS
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF073']")
+    public MobileElement openDurationDateWheelPicker;
+
+    //Using coordinates for iOS
+    @AndroidFindBy(xpath = "(//android.widget.TextView[@text='\uF073'])[2]")
+    public MobileElement openFromToDateWheelPicker;
 }

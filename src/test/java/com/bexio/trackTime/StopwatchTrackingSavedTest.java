@@ -14,7 +14,7 @@ public class StopwatchTrackingSavedTest extends Methods_LogIn {
 
         navigateTo.trackTime.click();
         log.info("Navigating in Track time scene");
-        trackTime.expandMoreDialog();
+        trackTime.expandMoreDialog("Stopwatch track time");
         trackTime.createStopwatchTracking();
         navigateTo.homeButton.click();
         log.info("Tapping on home button");
