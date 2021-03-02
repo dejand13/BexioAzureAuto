@@ -4,7 +4,6 @@ import com.bexio.logIn.Methods_LogIn;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LogTimeDurationTrackingSavedTest extends Methods_LogIn {
@@ -22,13 +21,5 @@ public class LogTimeDurationTrackingSavedTest extends Methods_LogIn {
         trackTime.expandMoreDialog("Log Time - Duration track time");
         trackTime.setDurationOrRangeWheelPickers(true);
         trackTime.saveAndValidateAddedEntryInOverview(true);
-//        navigateTo.saveButtonTrackTime.click();
-//        log.info("Saving the entry");
-//        Assert.assertTrue(navigateTo.savedSymbolTrackTime.isDisplayed());
-//        navigateTo.viewTimeTrackToastMessage.click();
-//        log.info("Tapping View button on save tracking toast message");
-//        Assert.assertTrue(navigateTo.verifyDurationTrackTimeEntryCreatedInOverview.isDisplayed());
-//        navigateTo.homeButton.click();
-//        log.info("Tapping on home button");
     }
 }

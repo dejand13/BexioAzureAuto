@@ -20,7 +20,7 @@ public class Methods_TrackTime extends DriverInit {
         driver.hideKeyboard();
         trackTimeSelector.moreTrackTime.click();
         log.info("Expanding the more dialog");
-        Thread.sleep(2000L);
+        Thread.sleep(4000L);
         trackTimeSelector.contactTrackTime.click();
         log.info("Tapping on contact");
         trackTimeSelector.searchContactMoreDialogTrackTime.sendKeys("LastName, FirstName");
@@ -124,5 +124,23 @@ public class Methods_TrackTime extends DriverInit {
         }
         trackTimeSelector.homeButton.click();
         log.info("Tapping on home button");
+    }
+    public void generateUploadFailedTracking() throws InterruptedException {
+        trackTimeSelector.trackTime.click();
+        log.info("Navigating in Track Time scene");
+        tapOnCoordinate.disableInternetConnection();
+        log.info("Disabling the internet connection");
+        trackTimeSelector.logTime.click();
+        log.info("Navigating in 'Log time' using the bottom sub-menu");
+        trackTimeSelector.saveButtonTrackTime.click();
+        log.info("Tapping on save button");
+        Assert.assertTrue(trackTimeSelector.noConnToastMessageTrackTime.isDisplayed());
+        log.info("Verifying that no internet connection toast message has been displayed");
+        trackTimeSelector.overview.click();
+        log.info("Navigating in 'Overview' using the the bottom sub-menu");
+        Assert.assertTrue(trackTimeSelector.uploadFailedTrackTimeRecord.isDisplayed());
+        tapOnCoordinate.enableInternetConnection();
+        log.info("Enabling internet connection");
+        Thread.sleep(7000L);
     }
 }

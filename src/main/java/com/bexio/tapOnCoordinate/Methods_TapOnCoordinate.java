@@ -2,20 +2,23 @@ package com.bexio.tapOnCoordinate;
 
 import com.bexio.init.DriverInit;
 import com.bexio.logIn.LogIn_Selectors;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.connection.ConnectionStateBuilder;
+import io.appium.java_client.touch.LongPressOptions;
+import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.Dimension;
 
 public class Methods_TapOnCoordinate extends DriverInit {
+    TouchAction touch = new TouchAction(driver);
     public void tapOnCoordinate(double screenWidthPercentage, double screenHeightPercentage) {
         int widthOfScreen = driver.manage().window().getSize().getWidth();
         int heightOfScreen = driver.manage().window().getSize().getHeight();
         int x = (int) (widthOfScreen * screenWidthPercentage);
         int y = (int) (heightOfScreen * screenHeightPercentage);
 
-        TouchAction touch = new TouchAction(driver);
         touch.tap(PointOption.point(x,y)).perform();
     }
     public void swipeByYAxisUsingCoordinates(double xAxisPositionPercentage, double yAxisStartPositionPercentage, double yAxisEndPositionPercentage){
@@ -24,7 +27,6 @@ public class Methods_TapOnCoordinate extends DriverInit {
         int startScroll = (int) (scrollDown.getHeight() * yAxisStartPositionPercentage);
         int endScroll = (int) (scrollDown.getHeight() * yAxisEndPositionPercentage);
 
-        TouchAction touch = new TouchAction(driver);
         touch.longPress(PointOption.point(scroll,startScroll)).moveTo(PointOption.point(scroll,endScroll)).release().perform();
     }
     public void swipeByXAxisUsingCoordinates(double yAxisPositionPercentage, double xAxisStartPositionPercentage, double xAxisEndPositionPercentage){
@@ -33,11 +35,9 @@ public class Methods_TapOnCoordinate extends DriverInit {
         int startScroll = (int) (scrollDown.getWidth() * xAxisStartPositionPercentage);
         int endScroll = (int) (scrollDown.getWidth() * xAxisEndPositionPercentage);
 
-        TouchAction touch = new TouchAction(driver);
         touch.longPress(PointOption.point(startScroll, scroll)).moveTo(PointOption.point(endScroll, scroll)).release().perform();
     }
     public void scrollSettingsMenu() {
-        TouchAction touch = new TouchAction(driver);
         Dimension scrollDown = driver.manage().window().getSize();
         int scroll = (int) 364.1;
 //        int startScroll = (int) 23.2;
@@ -47,7 +47,6 @@ public class Methods_TapOnCoordinate extends DriverInit {
         touch.longPress(PointOption.point(scroll,startScroll)).moveTo(PointOption.point(scroll,endScroll)).release().perform();
     }
     public void disableInternetConnection(){
-        TouchAction touch = new TouchAction(driver);
         LogIn_Selectors noConnection = new LogIn_Selectors(driver);
 
         if (executionStore.contains("android")) {
@@ -60,7 +59,6 @@ public class Methods_TapOnCoordinate extends DriverInit {
         }
     }
     public void enableInternetConnection(){
-        TouchAction touch = new TouchAction(driver);
         LogIn_Selectors noConnection = new LogIn_Selectors(driver);
 
         if (executionStore.contains("android")) {
@@ -90,5 +88,8 @@ public class Methods_TapOnCoordinate extends DriverInit {
         } else {
             tapOnCoordinate.tapOnCoordinate(xAxisPositionPercentage, yAxisPositionPercentage);
         }
+    }
+    public void scrollFromElementToElement(MobileElement startScroll, MobileElement endScroll) {
+        touch.longPress(LongPressOptions.longPressOptions().withElement(ElementOption.element(startScroll))).moveTo(ElementOption.element(endScroll)).release().perform();
     }
 }

@@ -181,4 +181,21 @@ public class Selectors_TrackTime extends LogIn_Selectors {
     //Using coordinates for iOS
     @AndroidFindBy(xpath = "(//android.widget.TextView[@text='\uF073'])[2]")
     public MobileElement openFromToDateWheelPicker;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Upload failed']")
+//    @iOSXCUITFindBy(xpath = ("//XCUIElementTypeOther[contains(@name,'Upload failed \uF12A')]"))
+    @iOSXCUITFindBy(xpath = "(//XCUIElementTypeOther[@name='\uF2F2 Add description Upload failed \uF12A'])[3]")
+    public MobileElement uploadFailedTrackTimeRecord;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF2F2']")
+    @iOSXCUITFindBy(xpath = ("//XCUIElementTypeOther[contains(@name,'\uF2F2')]"))
+    public MobileElement stopwatchSymbolOverview;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF0EE']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF0EE']")
+    public MobileElement uploadSymbolOverview;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='\uF1F8']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeOther[@name='\uF1F8']")
+    public MobileElement deleteSymbolOverview;
 }
